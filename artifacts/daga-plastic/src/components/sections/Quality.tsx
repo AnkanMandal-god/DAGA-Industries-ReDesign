@@ -18,7 +18,6 @@ export function Quality() {
               <ShieldCheck className="w-12 h-12 text-primary" />
               <div>
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Quality Assurance</h2>
-                <p className="text-primary font-medium tracking-widest uppercase text-sm mt-1">ISO 9001:2008 Certified</p>
               </div>
             </div>
 

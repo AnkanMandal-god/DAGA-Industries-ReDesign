@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { FileDown, ArrowRight } from "lucide-react";
+import dagaLogo from "@assets/image_1778790689221.png";
 
 const stats = [
   { label: "Years Experience", value: "55+" },
@@ -45,7 +46,8 @@ export function Hero() {
       {/* Main content */}
       <div className="relative z-10 flex-1 flex items-center pt-24 pb-8">
         <div className="container mx-auto px-4 md:px-6 text-white">
-          <div className="max-w-3xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            {/* Left Col */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -67,10 +69,14 @@ export function Hero() {
                 Since 1969
               </h1>
 
-              <p className="text-base md:text-lg text-white/60 mb-10 max-w-xl font-light leading-relaxed">
+              <p className="text-base md:text-lg text-white/60 mb-6 max-w-xl font-light leading-relaxed">
                 ISO 9001 Certified. Trusted partner to India's energy and
                 industrial leaders — delivering uncompromising quality at scale.
               </p>
+
+              <div className="text-white/50 italic text-sm border-l-2 border-primary/60 pl-3 mb-10 max-w-lg leading-relaxed">
+                "Quality Manufacturing Is A System, Not Just A Slogan. We Serve With Best Quality And Service. We Are Committed To Customer Satisfaction."
+              </div>
 
               {/* Capsule-shaped CTAs */}
               <div className="flex flex-col sm:flex-row gap-3">
@@ -95,6 +101,22 @@ export function Hero() {
                     <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Button>
+              </div>
+            </motion.div>
+
+            {/* Right Col */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, filter: "blur(10px)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              transition={{ duration: 1, delay: 0.3 }}
+              className="hidden sm:flex justify-center lg:justify-end items-center"
+            >
+              <div className="relative rounded-full overflow-hidden w-48 h-48 md:w-64 md:h-64 shadow-[0_0_80px_rgba(211,47,47,0.3)] bg-white/5 backdrop-blur-md p-4">
+                <img 
+                  src={dagaLogo} 
+                  alt="Daga Plastic Logo" 
+                  className="w-full h-full object-contain rounded-full mix-blend-screen opacity-90 drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
+                />
               </div>
             </motion.div>
           </div>

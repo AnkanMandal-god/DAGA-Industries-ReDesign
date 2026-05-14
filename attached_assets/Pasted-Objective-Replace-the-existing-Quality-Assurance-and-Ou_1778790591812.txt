@@ -1,0 +1,115 @@
+Objective: Replace the existing "Quality Assurance" and "Our Profile" sections with a high-end, interactive "Industrial Profile" section that balances legacy narrative with technical specifications.
+
+1. Layout & Structure (HTML)
+Header Area: Create a large, bold heading: "About Us". Underneath, include a brief 2-3 sentence summary of Daga Plastic Industries’ leadership in the sector as follows"Since 1969, Daga Plastic Industries has combined technical expertise with automated manufacturing to deliver high-precision, ISO-certified packaging solutions for India's industrial leaders. We provide total, scalable solutions—from custom design to nationwide distribution—across the petrochemical, agrochemical, and food sectors.".
+
+Read More Interaction: Implement a "Read More" button that, when clicked, opens a clean, modern Modal (popup) or a Slide-out Drawer. This modal should contain the full detailed history from the original text (including the Kolkata location, the transition from modest resources to high turnover, and the "Total Solution" philosophy all shown in organised form as follows The Daga Legacy: Engineering the Future of Plastics
+I. Our Heritage & Evolution
+Founded in 1969 with modest resources and a singular vision for quality, Daga Plastic Industries has undergone a massive transformation over the last five decades. What began as a local manufacturing setup in Kolkata has evolved into a high-turnover industrial powerhouse serving India’s energy and industrial leaders. Our journey is defined by a consistent rise in technical capability, moving from standard production to delivering precision-molded solutions that define the "Daga Brand" reputation.
+
+II. Technical Precision & "The Tough Jobs"
+We specialize in the manufacturing challenges others often avoid. Our facility utilizes fully automatic computerized lines and precision-controlled, world-class equipment to ensure zero-defect production.
+
+Specialized Techniques: We leverage advanced needle-blow techniques and sophisticated injection moulding to create irregular-shaped parts and complex geometries.
+
+Material Science: Our expertise allows us to work with high-performance polymers, creating high-ESCR (Environmental Stress Crack Resistance) containers for the most demanding chemical environments.
+
+III. The "Total Solution" Philosophy
+At Daga, we don't just manufacture; we partner. Our "Total Solution" approach manages every phase of the product lifecycle:
+
+Inception: Custom-design and development tailored to industry-specific needs (Railways, Defense, Agrochemicals).
+
+Short-Run Flexibility: Unlike many competitors, we offer cost-effective "short run" programs, allowing for specialized batches without the burden of massive overheads.
+
+Marketplace Delivery: Leveraging a seamless logistical network to ensure Pan-India supply and distribution.
+
+IV. Sustainable Innovation
+Innovation at Daga extends beyond the product to the process.
+
+Circular Economy: Our in-house recycling facility gives us a dual advantage: it significantly reduces our environmental footprint while allowing us to offer highly competitive pricing on base materials.
+
+Operational Efficiency: By refining our procurement and inventory management systems, we have drastically cut operational costs, passing those savings directly to our clients without compromising on international quality standards.).
+ You may use ur creativity to modify the text and the overall style of this.
+
+The 4-Pillar Grid: Below the intro, create a responsive 4-column grid (using CSS Grid) representing these specific categories:
+
+Replace the detailed text sections with a high-density, 4-column technical grid based on the layout in a3876677-d4e7-4a19-b649-861247fbd3a6. Each column must feature a bold header and a list of ultra-concise, single-line "power points."
+
+1. Grid Structure & Content (The 4 Columns)
+Map the points from the original "Our Profile" to the following four headings and short-line points:
+
+Column 1: Company Profile
+
+Established 1969.
+
+55+ Years Excellence.
+
+Strategic Kolkata Hub.
+
+Pan-India Supply Network.
+
+Column 2: Advanced Tech
+
+Fully Automated Lines.
+
+Precision-Controlled Equipment.
+
+Computerized Blow Moulding.
+
+State-of-the-art Injection Moulding.
+
+Column 3: Custom Solutions
+
+Irregular Shape Specialization.
+
+Precision Needle-Blow Tech.
+
+Cost-Effective Short Runs.
+
+Tailored Industrial Design.
+
+Column 4: Operational Edge
+
+In-house Recycling Facility.
+
+Optimized Procurement Systems.
+
+Low Operational Overheads.
+
+Project Inception-to-Marketplace.
+
+2. Visual & UI Styling (CSS)
+The "P-Line" Style: Format the points (P1, P2, etc.) as a bulleted list but replace standard bullets with a Brand Red (#e31e24) checkmark or a horizontal line.
+
+Typography: Headers should be All-Caps, Bold, and 1.2rem size. Point lines should be 0.9rem to ensure they stay on a single line.
+
+Borders & Separation: Use thin, semi-transparent vertical dividers between columns as shown in the sketch. On hover, the active column should have its background slightly brighten.
+
+Interactive Header: Each column header should have a unique industrial icon (Factory, Gear, Blueprint, Leaf) positioned above the text.
+
+3. Responsive Behavior
+Desktop: 4-column side-by-side view.
+
+Tablet: 2x2 grid layout.
+
+Mobile: Single-column vertical stack with "Accordions" so users can tap a header to see the P1-P4 points.
+
+4. Integration with Header
+Place this 4-column technical grid directly below the main "Our Industrial Profile" heading and the circular ISO badge.
+
+Keep the "Read More" button below the intro text but above this grid, ensuring the grid remains the focal point for technical specifications.
+2. Visual Elements & Branding
+The ISO Anchor: Integrate a circular "ISO 9001" element inspired by the current design. Position it as a floating "badge of trust" that sits between the header and the grid.
+
+Color Palette: Use a deep industrial background (Navy: #121212) with High-Contrast White text and Brand Red (#e31e24) for accents, icons, and buttons.
+
+3. Advanced CSS & Interactivity
+Glassmorphism: The 4 pillar cards should have a subtle glassmorphism effect (semi-transparent background with a backdrop-filter: blur(10px) and a thin border).
+
+Interactive Hover States: * Cards: On hover, cards should use a 3D tilt effect or a subtle transform: translateY(-10px) with a glowing red box-shadow.
+
+Icons: Icons should transition from White to Brand Red on hover.
+
+Animated ISO Badge: Add a CSS keyframe animation to the ISO circle—a very slow, subtle rotation of a dashed outer ring to create a "living" UI element.
+
+Typography: Use a heavy sans-serif (like Montserrat or Inter) for headings (Weight 800) to convey industrial strength.

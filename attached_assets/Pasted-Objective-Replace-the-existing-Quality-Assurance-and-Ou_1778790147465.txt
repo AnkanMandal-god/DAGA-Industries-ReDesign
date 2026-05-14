@@ -1,0 +1,32 @@
+Objective: Replace the existing "Quality Assurance" and "Our Profile" sections with a high-end, interactive "Industrial Profile" section that balances legacy narrative with technical specifications.
+
+1. Layout & Structure (HTML)
+Header Area: Create a large, bold heading: "Driving Industrial Precision Since 1969". Underneath, include a brief 2-3 sentence summary of Daga Plastic Industries’ leadership in the sector.
+
+Read More Interaction: Implement a "Read More" button that, when clicked, opens a clean, modern Modal (popup) or a Slide-out Drawer. This modal should contain the full detailed history from the original text (including the Kolkata location, the transition from modest resources to high turnover, and the "Total Solution" philosophy).
+
+The 4-Pillar Grid: Below the intro, create a responsive 4-column grid (using CSS Grid) representing these specific categories:
+
+Legacy & Scale: (Icon: Factory/Building) – Focus on 55+ years of experience and Pan-India supply.
+
+Advanced Engineering: (Icon: Microchip/Gear) – Focus on fully automatic computerized lines and Blow/Injection moulding.
+
+Bespoke Customization: (Icon: Ruler/Pencil) – Focus on "tough jobs," irregular shapes, needle-blow techniques, and short-run programs.
+
+Sustainable Efficiency: (Icon: Recycle/Leaf) – Focus on in-house recycling and optimized operational costs.
+
+2. Visual Elements & Branding
+The ISO Anchor: Integrate a circular "ISO 9001" element inspired by the current design. Position it as a floating "badge of trust" that sits between the header and the grid.
+
+Color Palette: Use a deep industrial background (Dark Charcoal or Navy: #121212) with High-Contrast White text and Brand Red (#e31e24) for accents, icons, and buttons.
+
+3. Advanced CSS & Interactivity
+Glassmorphism: The 4 pillar cards should have a subtle glassmorphism effect (semi-transparent background with a backdrop-filter: blur(10px) and a thin border).
+
+Interactive Hover States: * Cards: On hover, cards should use a 3D tilt effect or a subtle transform: translateY(-10px) with a glowing red box-shadow.
+
+Icons: Icons should transition from White to Brand Red on hover.
+
+Animated ISO Badge: Add a CSS keyframe animation to the ISO circle—a very slow, subtle rotation of a dashed outer ring to create a "living" UI element.
+
+Typography: Use a heavy sans-serif (like Montserrat or Inter) for headings (Weight 800) to convey industrial strength.

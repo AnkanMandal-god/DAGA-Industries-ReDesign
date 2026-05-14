@@ -6,7 +6,7 @@ export function Contact() {
       <div className="grid lg:grid-cols-2 min-h-[520px]">
 
         {/* Left — Active Google Map */}
-        <div className="relative min-h-[340px] lg:min-h-full">
+        <div className="relative min-h-[340px] lg:min-h-full border-r border-slate-200">
           <iframe
             title="Daga Plastic Industries Location"
             src="https://maps.google.com/maps?q=Daga+Plastic+Industries+Kolkata+West+Bengal+India&output=embed"
@@ -21,9 +21,7 @@ export function Contact() {
 
         {/* Right — Quick Contact card (dark, matching reference image) */}
         <div className="bg-[#111111] text-white px-8 py-12 md:px-14 md:py-16 flex flex-col justify-center">
-          <h2 className="text-xl font-extrabold uppercase tracking-widest mb-8 border-b border-white/10 pb-4">
-            Quick Contact:
-          </h2>
+          <h2 className="text-xl font-extrabold uppercase tracking-widest mb-8 border-b border-white/10 pb-4">Contact US:</h2>
 
           <div className="space-y-6 text-sm leading-relaxed">
             <div>
