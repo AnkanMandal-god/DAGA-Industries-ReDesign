@@ -36,7 +36,6 @@ export function About() {
   return (
     <section id="about" className="py-24 bg-[#0d1117] text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
-      
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-4xl mb-16">
           <motion.div
@@ -69,7 +68,7 @@ export function About() {
                 </DialogHeader>
                 <div className="space-y-6 max-h-[60vh] overflow-y-auto pr-4">
                   <div>
-                    <h4 className="text-lg font-bold text-primary mb-2 uppercase tracking-wide">I. Our Heritage & Evolution</h4>
+                    <h4 className="text-lg font-bold text-primary mb-2 uppercase tracking-wide">Our Heritage & Evolution</h4>
                     <p className="text-slate-600 leading-relaxed">Founded in 1969 in Kolkata, we have evolved over 55+ years into a high-turnover industrial powerhouse. We deliver precision-moulded solutions that define the "Daga Standard" of excellence in Indian manufacturing.</p>
                   </div>
                   <div>
