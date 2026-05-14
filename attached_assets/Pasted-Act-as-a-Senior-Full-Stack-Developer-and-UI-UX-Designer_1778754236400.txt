@@ -1,0 +1,78 @@
+Act as a Senior Full-Stack Developer and UI/UX Designer specialized in B2B Industrial Manufacturing. Your mission is to build a "Speculative Redesign" (Spec Build) for Daga Plastic Industries to replace their outdated legacy site. The final product must look like a multi-million dollar corporation to justify a high-ticket sale.
+
+[1. Technical Context & Strategic Goal]
+
+Purpose: A proactive pitch to the company owners to buy a complete digital transformation.
+
+Target Audience: Procurement officers from global firms (e.g., Indian Oil, HP, Berger) who require efficiency, trust, and technical clarity.
+
+Tech Stack: Modern HTML5, CSS3 (Tailwind preferred), and JavaScript. Ensure it is hosted on Replit for a live, shareable staging link.
+
+[2. Visual Identity & Assets]
+
+Reference Current State: Use the "trash" legacy site for content extraction only.
+
+Landing/Hero: image_a3deb8.png
+
+Mobile Failures: 1000316096.jpg through 1000316104.jpg (Focus on fixing the clutter and slow response).
+
+Internal Data: image_a3699f.png (About), image_a366ee.png (Products), image_a366b5.png (Clients), image_a36691.png (Contact), image_a3665a.png (Feedback).
+
+Design Palette: Professional White, Slate Grey, and Corporate Red (Hex: #D32F2F or similar). Use red exclusively for high-impact accents (CTAs, Icons, Active States).
+
+[3. Expansive UI/UX Instructions]
+
+Mobile-First Precision:
+
+Eliminate the "zoomed-out desktop" feel.
+
+Implement a Sticky Bottom Navigation on mobile for "Call," "WhatsApp," and "Quote".
+
+Products must be in a 2-column Masonry or Flex grid with high-contrast labels under the images.
+
+The Hero Module:
+
+Headline: "Engineering Precision in Plastic Manufacturing Since 1969".
+
+Sub-headline: "ISO 9001 Certified. Trusted Partner to India's Energy and Industrial Leaders".
+
+Main CTA: "Download Product Catalog" (Primary) and "Request Bulk Quote" (Secondary).
+
+Clientele "Power-Grid":
+
+Create a dedicated section for logos: Indian Oil, HP, Bharat Petroleum, BSNL, Berger Paints.
+
+Add a subtle "grayscale to color" hover effect to these logos to symbolize professionalism.
+
+Interactive Product Engine:
+
+Build a filterable gallery for the 21+ products.
+
+Categories: Industrial Containers, Food Grade Packaging, Agricultural Tools, Household.
+
+Each card should have a "View Specs" button that opens a clean modal.
+
+[4. B2B Conversion & Performance]
+
+Speed: Implement lazy-loading for images and optimize script delivery to ensure the "speed" score is 90+ on mobile.
+
+The "Lead Capture" Portal:
+
+Replace the feedback form with a multi-step "Inquiry Portal".
+
+Fields: Industry Type, Estimated Volume, Product Category, Mobile Number.
+
+Trust Signals: Modernize the ISO 9001:2008 badge. Make it look like a security seal rather than a line of plain text.
+
+[5. Operational Rules]
+
+Clarity Check: If any asset from the screenshots (like a specific product image) is too low-res, use a high-quality placeholder and leave a <!-- COMMENT --> asking me for the original file.
+
+Validation: Stop and ask for clarification if the navigation structure from image_a3deb8.png conflicts with the mobile responsiveness goals.
+
+🧐 Why this prompt is "Expansive"
+Psychology: It focuses on "High-Ticket" and "B2B Procurement" language to make the AI build for business owners, not just casual visitors.
+
+Specific Fixes: It calls out the exact image names (e.g., 1000316104.jpg) to remind the AI of the specific "Infinite Scroll" mess it needs to solve.
+
+Conversion Focus: It moves away from "Feedback" (passive) to "Bulk Quote Inquiry" (active/money-making).
