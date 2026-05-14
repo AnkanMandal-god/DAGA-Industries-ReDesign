@@ -1,4 +1,3 @@
-import { Link } from "wouter";
 import { Menu, X, Triangle } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
@@ -9,9 +8,9 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 60);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -25,14 +24,29 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
-      }`}
+      style={{
+        backgroundColor: isScrolled ? "rgba(255,255,255,0.97)" : "rgba(255,255,255,0)",
+        boxShadow: isScrolled ? "0 1px 24px 0 rgba(0,0,0,0.10)" : "none",
+        backdropFilter: isScrolled ? "blur(12px)" : "none",
+        transition: "background-color 0.5s ease, box-shadow 0.5s ease, backdrop-filter 0.5s ease, padding 0.4s ease",
+        paddingTop: isScrolled ? "12px" : "20px",
+        paddingBottom: isScrolled ? "12px" : "20px",
+      }}
+      className="fixed top-0 w-full z-50"
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2 group">
-          <Triangle className={`w-8 h-8 ${isScrolled ? "text-primary" : "text-primary"} fill-primary`} />
-          <span className={`text-2xl font-black tracking-tight ${isScrolled ? "text-foreground" : "text-white"}`}>
+          <Triangle
+            className="w-8 h-8 text-primary fill-primary"
+            style={{ transition: "transform 0.3s ease" }}
+          />
+          <span
+            className="text-2xl font-black tracking-tight"
+            style={{
+              color: isScrolled ? "hsl(var(--foreground))" : "#ffffff",
+              transition: "color 0.5s ease",
+            }}
+          >
             DAGA
           </span>
         </a>
@@ -43,9 +57,11 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className={`text-sm font-medium hover:text-primary transition-colors ${
-                isScrolled ? "text-foreground/80" : "text-white/90"
-              }`}
+              className="text-sm font-medium hover:text-primary"
+              style={{
+                color: isScrolled ? "hsl(var(--foreground) / 0.8)" : "rgba(255,255,255,0.9)",
+                transition: "color 0.5s ease",
+              }}
             >
               {link.name}
             </a>
@@ -57,10 +73,16 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-foreground bg-white/20 rounded-md backdrop-blur-sm"
+          className="md:hidden p-2 rounded-md"
+          style={{
+            color: isScrolled ? "hsl(var(--foreground))" : "#ffffff",
+            transition: "color 0.5s ease",
+          }}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          data-testid="button-mobile-menu"
+          aria-label="Toggle menu"
         >
-          {mobileMenuOpen ? <X /> : <Menu className={isScrolled ? "text-foreground" : "text-white"} />}
+          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
@@ -72,7 +94,7 @@ export function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="py-3 text-foreground font-medium border-b border-border/50 hover:text-primary"
+                className="py-3 text-foreground font-medium border-b border-border/50 hover:text-primary transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
