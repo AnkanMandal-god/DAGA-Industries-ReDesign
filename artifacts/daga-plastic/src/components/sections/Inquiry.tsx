@@ -70,7 +70,7 @@ export function Inquiry() {
       <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "32px 32px" }} />
       <div className="container mx-auto px-4 md:px-6 max-w-3xl relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Request a Bulk Quote</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Request a Quote</h2>
           <p className="text-slate-400 text-lg">Fast-track your procurement process with our dedicated enterprise portal.</p>
         </div>
 

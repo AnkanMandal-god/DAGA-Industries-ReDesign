@@ -112,7 +112,7 @@ export default function ProductDetail() {
               <p className="text-slate-400 mb-8 max-w-xl mx-auto">Get in touch with our sales team to discuss custom requirements, volume discounts, and delivery timelines.</p>
               <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white rounded-full px-8 py-6 text-base font-semibold group">
                 <Link href="/#inquiry">
-                  Request a Bulk Quote
+                  Request a Quote
                   <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
