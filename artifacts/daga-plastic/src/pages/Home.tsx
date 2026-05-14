@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { MobileStickyNav } from "@/components/layout/MobileStickyNav";
+import { DesktopFloatingActions } from "@/components/layout/DesktopFloatingActions";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
@@ -24,6 +25,7 @@ export default function Home() {
       </main>
       <Footer />
       <MobileStickyNav />
+      <DesktopFloatingActions />
     </div>
   );
 }

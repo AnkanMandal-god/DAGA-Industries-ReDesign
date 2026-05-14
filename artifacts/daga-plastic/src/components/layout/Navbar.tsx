@@ -36,10 +36,7 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2 group">
-          <Triangle
-            className="w-8 h-8 text-primary fill-primary"
-            style={{ transition: "transform 0.3s ease" }}
-          />
+          <Triangle className="w-8 h-8 text-primary fill-primary" />
           <span
             className="text-2xl font-black tracking-tight"
             style={{
@@ -57,27 +54,26 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium hover:text-primary"
-              style={{
-                color: isScrolled ? "hsl(var(--foreground) / 0.8)" : "rgba(255,255,255,0.9)",
-                transition: "color 0.5s ease",
-              }}
+              className={`text-sm font-medium relative group/link transition-colors duration-300 hover:text-primary ${
+                isScrolled ? "text-foreground/80" : "text-white/90"
+              }`}
             >
               {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover/link:w-full rounded-full" />
             </a>
           ))}
-          <Button asChild className="bg-primary hover:bg-primary/90 text-white rounded-none px-6">
+          <Button
+            asChild
+            className="bg-primary hover:bg-primary/85 text-white rounded-none px-6 transition-colors duration-300"
+          >
             <a href="#inquiry">Get a Quote</a>
           </Button>
         </nav>
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 rounded-md"
-          style={{
-            color: isScrolled ? "hsl(var(--foreground))" : "#ffffff",
-            transition: "color 0.5s ease",
-          }}
+          className="md:hidden p-2 rounded-md transition-colors duration-300"
+          style={{ color: isScrolled ? "hsl(var(--foreground))" : "#ffffff" }}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           data-testid="button-mobile-menu"
           aria-label="Toggle menu"

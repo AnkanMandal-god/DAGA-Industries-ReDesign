@@ -20,16 +20,10 @@ export function Hero() {
   };
 
   return (
-    <section
-      id="home"
-      className="relative min-h-[100dvh] flex flex-col"
-    >
+    <section id="home" className="relative min-h-[100dvh] flex flex-col">
       {/* Industrial CSS background */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Deep dark base */}
         <div className="absolute inset-0 bg-[#080c16]" />
-
-        {/* Subtle perspective grid */}
         <div
           className="absolute inset-0 opacity-[0.07]"
           style={{
@@ -38,25 +32,17 @@ export function Hero() {
             backgroundSize: "72px 72px",
           }}
         />
-
-        {/* Red vertical accent bar — right side */}
         <div className="absolute top-0 right-[18%] bottom-0 w-[2px] bg-gradient-to-b from-transparent via-primary/60 to-transparent" />
         <div className="absolute top-0 right-[36%] bottom-0 w-[1px] bg-gradient-to-b from-transparent via-white/5 to-transparent" />
-
-        {/* Red glow — top-left origin */}
         <div
           className="absolute -top-40 -left-40 w-[700px] h-[700px] rounded-full opacity-[0.07]"
           style={{ background: "radial-gradient(circle, #D32F2F 0%, transparent 70%)" }}
         />
-
-        {/* Subtle bright top-edge horizon line */}
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-
-        {/* Bottom dark vignette for stats readability */}
         <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-black/70 to-transparent" />
       </div>
 
-      {/* Main content — fills remaining space, centers vertically */}
+      {/* Main content */}
       <div className="relative z-10 flex-1 flex items-center pt-24 pb-8">
         <div className="container mx-auto px-4 md:px-6 text-white">
           <div className="max-w-3xl">
@@ -65,7 +51,6 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              {/* ISO badge */}
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/8 backdrop-blur-md border border-white/15 rounded-full mb-8">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                 <span className="text-xs font-semibold tracking-widest uppercase text-white/80">
@@ -73,7 +58,6 @@ export function Hero() {
                 </span>
               </div>
 
-              {/* Headline */}
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-6">
                 Engineering Precision{" "}
                 <br className="hidden sm:block" />
@@ -83,18 +67,17 @@ export function Hero() {
                 Since 1969
               </h1>
 
-              {/* Sub-headline */}
               <p className="text-base md:text-lg text-white/60 mb-10 max-w-xl font-light leading-relaxed">
                 ISO 9001 Certified. Trusted partner to India's energy and
                 industrial leaders — delivering uncompromising quality at scale.
               </p>
 
-              {/* CTAs */}
+              {/* Capsule-shaped CTAs */}
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button
                   size="lg"
                   onClick={handleDownloadCatalog}
-                  className="bg-primary hover:bg-primary/85 text-white rounded-none px-8 py-6 text-base font-semibold"
+                  className="bg-primary hover:bg-primary/85 text-white rounded-full px-8 py-6 text-base font-semibold transition-all duration-300"
                   data-testid="button-download-catalog"
                 >
                   <FileDown className="mr-2 h-5 w-5" />
@@ -104,7 +87,7 @@ export function Hero() {
                   size="lg"
                   variant="outline"
                   asChild
-                  className="border-white/30 text-white bg-white/5 hover:bg-white/15 hover:border-white/60 rounded-none px-8 py-6 text-base font-semibold group"
+                  className="border-white/30 text-white bg-white/5 hover:bg-white/15 hover:border-white/60 rounded-full px-8 py-6 text-base font-semibold group transition-all duration-300"
                   data-testid="button-request-quote"
                 >
                   <a href="#inquiry">
@@ -118,22 +101,34 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Stats bar — sits at the bottom, part of normal flow */}
-      <div className="relative z-10 bg-black/50 backdrop-blur-md border-t border-white/10">
-        <div className="container mx-auto px-4 md:px-6 py-5">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-0 text-center">
+      {/* Stats bar — more attention-grabbing */}
+      <div className="relative z-10 border-t border-white/10" style={{ background: "rgba(0,0,0,0.65)", backdropFilter: "blur(16px)" }}>
+        {/* Red top accent line */}
+        <div className="absolute top-0 left-8 right-8 h-[1px] bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
+        <div className="container mx-auto px-4 md:px-6 py-0">
+          <div className="grid grid-cols-2 md:grid-cols-4">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
-                className="px-4 py-3 border-r border-white/10 last:border-r-0 even:border-r-0 md:even:border-r md:last:border-r-0"
+                className="flex flex-col items-center justify-center py-6 px-4 relative group cursor-default"
               >
-                <div className="text-xl md:text-2xl font-bold text-white mb-0.5">
+                {/* Vertical divider */}
+                {i < stats.length - 1 && (
+                  <div className="absolute right-0 top-4 bottom-4 w-[1px] bg-white/10 hidden md:block" />
+                )}
+                {/* Mobile: bottom divider for top row */}
+                {i < 2 && (
+                  <div className="absolute bottom-0 left-4 right-4 h-[1px] bg-white/10 md:hidden" />
+                )}
+                <div
+                  className="text-2xl md:text-3xl font-black text-white mb-1 group-hover:text-primary transition-colors duration-300"
+                >
                   {stat.value}
                 </div>
-                <div className="text-[11px] text-white/50 uppercase tracking-wider">
+                <div className="text-[10px] md:text-[11px] text-white/45 uppercase tracking-[0.15em] font-medium">
                   {stat.label}
                 </div>
               </motion.div>
