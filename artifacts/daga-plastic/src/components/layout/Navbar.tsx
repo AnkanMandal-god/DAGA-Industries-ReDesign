@@ -1,15 +1,14 @@
-import { Menu, X, Triangle } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import dagaLogo from "@assets/image_1778790689221.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 60);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 60);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -19,6 +18,7 @@ export function Navbar() {
     { name: "About", href: "#about" },
     { name: "Products", href: "#products" },
     { name: "Clients", href: "#clients" },
+    { name: "Feedback", href: "#feedback" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -29,16 +29,19 @@ export function Navbar() {
         boxShadow: isScrolled ? "0 1px 24px 0 rgba(0,0,0,0.10)" : "none",
         backdropFilter: isScrolled ? "blur(12px)" : "none",
         transition: "background-color 0.5s ease, box-shadow 0.5s ease, backdrop-filter 0.5s ease, padding 0.4s ease",
-        paddingTop: isScrolled ? "12px" : "20px",
-        paddingBottom: isScrolled ? "12px" : "20px",
+        paddingTop: isScrolled ? "10px" : "18px",
+        paddingBottom: isScrolled ? "10px" : "18px",
       }}
       className="fixed top-0 w-full z-50"
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 group">
-          <Triangle className="w-8 h-8 text-primary fill-primary" />
+        {/* Logo */}
+        <a href="#home" className="flex items-center gap-2.5 group">
+          <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary/30 group-hover:ring-primary/70 transition-all duration-300 bg-white shadow-sm">
+            <img src={dagaLogo} alt="Daga Logo" className="w-full h-full object-contain" />
+          </div>
           <span
-            className="text-2xl font-black tracking-tight"
+            className="text-xl font-black tracking-tight"
             style={{
               color: isScrolled ? "hsl(var(--foreground))" : "#ffffff",
               transition: "color 0.5s ease",
@@ -49,7 +52,7 @@ export function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.name}
@@ -62,10 +65,7 @@ export function Navbar() {
               <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover/link:w-full rounded-full" />
             </a>
           ))}
-          <Button
-            asChild
-            className="bg-primary hover:bg-primary/85 text-white rounded-none px-6 transition-colors duration-300"
-          >
+          <Button asChild className="bg-primary hover:bg-primary/85 text-white rounded-full px-5 py-2 text-sm transition-colors duration-300">
             <a href="#inquiry">Get a Quote</a>
           </Button>
         </nav>
@@ -96,7 +96,7 @@ export function Navbar() {
                 {link.name}
               </a>
             ))}
-            <Button asChild className="mt-4 w-full bg-primary hover:bg-primary/90 text-white">
+            <Button asChild className="mt-4 w-full bg-primary hover:bg-primary/90 text-white rounded-full">
               <a href="#inquiry" onClick={() => setMobileMenuOpen(false)}>Get a Quote</a>
             </Button>
           </nav>

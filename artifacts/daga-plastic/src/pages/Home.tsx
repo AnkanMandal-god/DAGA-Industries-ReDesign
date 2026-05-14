@@ -8,6 +8,7 @@ import { Products } from "@/components/sections/Products";
 import { Quality } from "@/components/sections/Quality";
 import { Clients } from "@/components/sections/Clients";
 import { Inquiry } from "@/components/sections/Inquiry";
+import { Feedback } from "@/components/sections/Feedback";
 import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <Quality />
         <Clients />
         <Inquiry />
+        <Feedback />
         <Contact />
       </main>
       <Footer />

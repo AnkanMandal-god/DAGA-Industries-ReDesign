@@ -2,6 +2,12 @@ import { ShieldCheck, Award, Wrench, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 
 export function Quality() {
+  const pillars = [
+    { icon: Award, title: "International Standards" },
+    { icon: Clock, title: "55+ Years Experience" },
+    { icon: Wrench, title: "Precision Engineering" },
+  ];
+
   return (
     <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
@@ -15,28 +21,30 @@ export function Quality() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-6">
-              <ShieldCheck className="w-12 h-12 text-primary" />
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Quality Assurance</h2>
-              </div>
+              <ShieldCheck className="w-12 h-12 text-primary shrink-0" />
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Quality Assurance</h2>
             </div>
 
-            <p className="text-lg text-slate-300 leading-relaxed mb-10 border-l-2 border-primary pl-6">
+            <p className="text-lg text-slate-300 leading-relaxed mb-12 border-l-2 border-primary pl-6">
               Leveraging our long industry standing & in-depth product knowledge we manufacture superior quality plastic containers, plastic jerry cans, plastic drums that meet international quality standards.
             </p>
 
-            <div className="grid sm:grid-cols-3 gap-6">
-              {[
-                { icon: Award, title: "International Standards" },
-                { icon: Clock, title: "55+ Years Experience" },
-                { icon: Wrench, title: "Precision Engineering" },
-              ].map((item, i) => (
-                <div key={i} className="text-center sm:text-left">
-                  <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mb-4 mx-auto sm:mx-0">
+            {/* Evenly spaced icon pillars */}
+            <div className="grid grid-cols-3 gap-4">
+              {pillars.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="flex flex-col items-center text-center gap-3"
+                >
+                  <div className="w-14 h-14 bg-white/10 rounded-full flex items-center justify-center shrink-0">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h4 className="font-semibold">{item.title}</h4>
-                </div>
+                  <h4 className="font-semibold text-sm leading-snug">{item.title}</h4>
+                </motion.div>
               ))}
             </div>
           </motion.div>

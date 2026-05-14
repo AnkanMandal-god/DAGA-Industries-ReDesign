@@ -2,11 +2,19 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Grid3x3, LayoutGrid, List, ArrowRight } from "lucide-react";
+import { LayoutGrid, List, ArrowRight, Package2, ChevronDown, ChevronUp } from "lucide-react";
 import { products, Category } from "@/data/products";
 import { useLocation } from "wouter";
 
-const categories: Category[] | "All"[] = ["All", "Industrial Containers", "Food Grade", "Agricultural", "Household", "Other"];
+const categories: (Category | "All")[] = ["All", "Industrial Containers", "Food Grade", "Agricultural", "Household", "Other"];
+
+const categoryColors: Record<string, string> = {
+  "Industrial Containers": "bg-slate-700",
+  "Food Grade": "bg-emerald-800",
+  "Agricultural": "bg-amber-800",
+  "Household": "bg-blue-800",
+  "Other": "bg-slate-600",
+};
 
 export function Products() {
   const [, setLocation] = useLocation();
@@ -15,157 +23,178 @@ export function Products() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [previewIndices, setPreviewIndices] = useState<number[]>([0, 1, 2, 3]);
 
-  // Cycle preview products when collapsed
   useEffect(() => {
     if (isExpanded) return;
-    const interval = setInterval(() => {
-      setPreviewIndices(prev => {
-        const next = [...prev];
-        for (let i = 0; i < 4; i++) {
-          next[i] = Math.floor(Math.random() * products.length);
-        }
-        return next;
-      });
-    }, 4000);
+    const randomize = () => {
+      const picked: number[] = [];
+      while (picked.length < 4) {
+        const r = Math.floor(Math.random() * products.length);
+        if (!picked.includes(r)) picked.push(r);
+      }
+      setPreviewIndices(picked);
+    };
+    const interval = setInterval(randomize, 4000);
     return () => clearInterval(interval);
   }, [isExpanded]);
 
-  const filteredProducts = products.filter(p => activeCategory === "All" || p.category === activeCategory);
+  const filteredProducts = products.filter(
+    (p) => activeCategory === "All" || p.category === activeCategory
+  );
 
   return (
-    <section id="products" className="py-24 relative border-t border-border">
-      {/* Light industrial grid pattern background */}
-      <div className="absolute inset-0 bg-slate-50 z-0" />
-      <div className="absolute inset-0 z-0 opacity-20" style={{ backgroundImage: "radial-gradient(#CBD5E1 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+    <section id="products" className="py-24 bg-[#0a0e1a] text-white relative overflow-hidden">
+      {/* Subtle grid */}
+      <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
+      {/* Red glow top-right */}
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-[0.06]" style={{ background: "radial-gradient(circle, #D32F2F 0%, transparent 70%)" }} />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        {/* Section Heading */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <div>
-            <div className="flex items-center gap-3 mb-2">
-              <Grid3x3 className="w-8 h-8 text-primary" />
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 tracking-tight">OUR PRODUCTS</h2>
-            </div>
-            <div className="w-24 h-1.5 bg-primary"></div>
-          </div>
-          <div className="mt-4 md:mt-0 text-slate-500 font-medium">
-            20 Products Across 5 Categories
-          </div>
-        </div>
 
-        {!isExpanded ? (
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Description & CTA */}
+        {/* Section heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-12"
+        >
+          <span className="text-primary font-bold tracking-widest uppercase text-sm mb-3 block">Manufacturing Portfolio</span>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <p className="text-xl md:text-2xl text-slate-700 leading-relaxed mb-8 font-light">
+              <div className="flex items-center gap-4 mb-3">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Package2 className="w-6 h-6 text-primary" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-black tracking-tight">OUR PRODUCTS</h2>
+              </div>
+              <div className="w-20 h-1 bg-primary rounded-full" />
+            </div>
+            <p className="text-white/40 text-sm font-medium tracking-widest uppercase">21 Products · 5 Categories</p>
+          </div>
+        </motion.div>
+
+        {/* Collapsed state */}
+        {!isExpanded ? (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="grid lg:grid-cols-2 gap-12 items-center"
+          >
+            <div>
+              <p className="text-lg md:text-xl text-white/65 leading-relaxed mb-8 font-light">
                 Precision-engineered plastic solutions across Industrial, Food Grade, Agricultural, and Household segments — built to ISO 9001 standards.
               </p>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 onClick={() => setIsExpanded(true)}
-                className="w-full md:w-auto bg-primary hover:bg-primary/90 text-white rounded-none px-10 py-6 text-lg font-bold shadow-lg"
+                className="bg-primary hover:bg-primary/85 text-white rounded-full px-10 py-6 text-base font-bold shadow-lg shadow-primary/20 transition-all duration-300 group"
               >
                 Browse All Products
+                <ChevronDown className="ml-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform" />
               </Button>
             </div>
 
-            {/* Right: 2x2 Cycling Preview Grid */}
-            <div className="grid grid-cols-2 gap-4">
+            {/* 2×2 cycling preview */}
+            <div className="grid grid-cols-2 gap-3">
               <AnimatePresence mode="popLayout">
                 {previewIndices.map((idx, position) => {
                   const product = products[idx];
                   if (!product) return null;
+                  const colorClass = categoryColors[product.category] || "bg-slate-700";
                   return (
                     <motion.div
                       key={`${product.id}-${position}`}
-                      initial={{ opacity: 0, scale: 0.95 }}
+                      initial={{ opacity: 0, scale: 0.92 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 1.05 }}
                       transition={{ duration: 0.5 }}
                       onClick={() => setLocation(`/product/${product.id}`)}
-                      className={`aspect-square ${product.colorAccent} cursor-pointer relative group overflow-hidden shadow-md flex flex-col justify-end p-4 md:p-6`}
+                      className={`aspect-square ${colorClass} cursor-pointer relative group overflow-hidden rounded-lg`}
+                      data-testid={`card-preview-product-${product.id}`}
                     >
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
-                      <div className="relative z-10 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                        <Badge variant="secondary" className="mb-2 bg-white/20 text-white border-none backdrop-blur-sm text-[10px] uppercase">
-                          {product.category}
-                        </Badge>
-                        <h3 className="text-white font-bold text-lg md:text-xl leading-tight line-clamp-2">
-                          {product.name}
-                        </h3>
+                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300" />
+                      <div className="absolute inset-0 flex flex-col justify-end p-4 z-10">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-white/60 mb-1">{product.category}</span>
+                        <h3 className="text-white font-bold text-sm md:text-base leading-tight">{product.name}</h3>
+                      </div>
+                      <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <ArrowRight className="w-3.5 h-3.5 text-white" />
                       </div>
                     </motion.div>
                   );
                 })}
               </AnimatePresence>
             </div>
-          </div>
+          </motion.div>
         ) : (
-          <div className="space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-500">
-            {/* Filters and View Toggle */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 bg-white p-4 shadow-sm border border-slate-200">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="space-y-6"
+          >
+            {/* Filters + view toggle */}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white/5 border border-white/10 backdrop-blur-sm p-4 rounded-xl">
               <div className="flex flex-wrap gap-2">
                 {categories.map((cat) => (
-                  <Button
+                  <button
                     key={cat}
-                    variant={activeCategory === cat ? "default" : "outline"}
-                    onClick={() => setActiveCategory(cat as any)}
-                    className={`rounded-none ${activeCategory === cat ? "bg-primary text-white hover:bg-primary/90" : "bg-transparent text-slate-600 hover:text-slate-900 border-slate-300"}`}
+                    onClick={() => setActiveCategory(cat as Category | "All")}
+                    className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 ${
+                      activeCategory === cat
+                        ? "bg-primary text-white shadow-md shadow-primary/30"
+                        : "text-white/60 hover:text-white border border-white/15 hover:border-white/40"
+                    }`}
                   >
                     {cat}
-                  </Button>
+                  </button>
                 ))}
               </div>
-              <div className="flex items-center gap-2 border border-slate-200 p-1">
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  className={`rounded-none h-8 w-8 ${viewMode === "grid" ? "bg-slate-100 text-primary" : "text-slate-400"}`}
+              <div className="flex items-center gap-1 bg-white/5 border border-white/10 rounded-full p-1">
+                <button
                   onClick={() => setViewMode("grid")}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${viewMode === "grid" ? "bg-primary text-white" : "text-white/40 hover:text-white"}`}
                 >
                   <LayoutGrid className="w-4 h-4" />
-                </Button>
-                <Button 
-                  variant="ghost" 
-                  size="icon" 
-                  className={`rounded-none h-8 w-8 ${viewMode === "list" ? "bg-slate-100 text-primary" : "text-slate-400"}`}
+                </button>
+                <button
                   onClick={() => setViewMode("list")}
+                  className={`w-8 h-8 rounded-full flex items-center justify-center transition-all ${viewMode === "list" ? "bg-primary text-white" : "text-white/40 hover:text-white"}`}
                 >
                   <List className="w-4 h-4" />
-                </Button>
+                </button>
               </div>
             </div>
 
-            {/* Expanded Content View */}
+            {/* Grid view */}
             {viewMode === "grid" ? (
-              <motion.div layout className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+              <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                 <AnimatePresence>
                   {filteredProducts.map((product) => {
-                    const initials = product.name.substring(0, 2).toUpperCase();
+                    const colorClass = categoryColors[product.category] || "bg-slate-700";
                     return (
                       <motion.div
                         layout
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
                         key={product.id}
-                        className="bg-white border border-slate-200 group flex flex-col h-full shadow-sm hover:shadow-md transition-shadow"
+                        className="bg-white/5 border border-white/10 rounded-xl overflow-hidden group hover:border-primary/50 hover:bg-white/8 transition-all duration-300"
                       >
-                        <div className="aspect-[4/3] bg-slate-100 flex items-center justify-center relative overflow-hidden">
-                          <span className="text-5xl font-black text-slate-300 group-hover:scale-110 transition-transform duration-500">
-                            {initials}
+                        <div className={`aspect-[4/3] ${colorClass} flex items-center justify-center relative`}>
+                          <span className="text-5xl font-black text-white/20 group-hover:scale-110 transition-transform duration-500 select-none">
+                            {product.name.substring(0, 2).toUpperCase()}
                           </span>
                         </div>
-                        <div className="p-5 flex flex-col flex-1">
-                          <Badge variant="secondary" className="w-fit mb-3 text-[10px] uppercase tracking-wider bg-slate-100 text-slate-600">{product.category}</Badge>
-                          <h3 className="font-bold text-slate-900 mb-4 text-lg line-clamp-2 flex-1">{product.name}</h3>
-                          <Button 
-                            variant="outline" 
-                            className="w-full rounded-none border-primary text-primary hover:bg-primary hover:text-white transition-colors mt-auto"
+                        <div className="p-4">
+                          <span className="text-[10px] font-bold uppercase tracking-widest text-primary/80 block mb-1">{product.category}</span>
+                          <h3 className="font-bold text-white text-sm mb-3 leading-snug line-clamp-2">{product.name}</h3>
+                          <button
                             onClick={() => setLocation(`/product/${product.id}`)}
+                            className="w-full py-2 rounded-full border border-primary/40 text-primary text-xs font-bold uppercase tracking-wider hover:bg-primary hover:text-white hover:border-primary transition-all duration-200"
                           >
                             View Details
-                          </Button>
+                          </button>
                         </div>
                       </motion.div>
                     );
@@ -173,37 +202,34 @@ export function Products() {
                 </AnimatePresence>
               </motion.div>
             ) : (
-              <div className="bg-white border border-slate-200 shadow-sm rounded-sm overflow-hidden">
+              <div className="bg-white/5 border border-white/10 rounded-xl overflow-hidden">
                 {filteredProducts.map((product, idx) => (
-                  <div 
-                    key={product.id} 
-                    className={`flex items-center justify-between p-4 md:p-6 group cursor-pointer hover:bg-primary/5 transition-colors ${idx % 2 === 0 ? "bg-white" : "bg-slate-50"}`}
+                  <div
+                    key={product.id}
                     onClick={() => setLocation(`/product/${product.id}`)}
+                    className={`flex items-center justify-between px-5 py-4 group cursor-pointer hover:bg-primary/10 transition-colors ${idx !== 0 ? "border-t border-white/8" : ""}`}
                   >
-                    <div className="flex items-center gap-4 md:gap-8 flex-1">
-                      <h3 className="font-bold text-slate-900 group-hover:text-primary transition-colors text-base md:text-lg flex-1">
-                        {product.name}
-                      </h3>
-                      <Badge variant="outline" className="hidden sm:inline-flex bg-white text-slate-500 border-slate-200">
-                        {product.category}
-                      </Badge>
+                    <div className="flex items-center gap-4 flex-1 min-w-0">
+                      <h3 className="font-semibold text-white/85 group-hover:text-white transition-colors text-sm md:text-base truncate">{product.name}</h3>
+                      <Badge className="hidden sm:inline-flex bg-white/8 text-white/50 border-white/10 text-[10px] shrink-0">{product.category}</Badge>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-slate-300 group-hover:text-primary transition-colors ml-4" />
+                    <ArrowRight className="w-4 h-4 text-white/20 group-hover:text-primary transition-colors ml-4 shrink-0" />
                   </div>
                 ))}
               </div>
             )}
 
-            <div className="flex justify-center pt-8">
-              <Button 
-                variant="ghost" 
+            <div className="flex justify-center pt-4">
+              <Button
+                variant="ghost"
                 onClick={() => setIsExpanded(false)}
-                className="text-slate-500 hover:text-slate-900 font-semibold uppercase tracking-wider"
+                className="text-white/40 hover:text-white rounded-full px-8 font-semibold uppercase tracking-wider text-sm group"
               >
-                Collapse View
+                <ChevronUp className="mr-2 h-4 w-4 group-hover:-translate-y-0.5 transition-transform" />
+                Collapse
               </Button>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
     </section>

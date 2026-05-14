@@ -1,15 +1,15 @@
-import { User, Phone, Mail, Globe } from "lucide-react";
+import { User, Phone, Mail, Globe, MapPin, Building2, Factory } from "lucide-react";
 
 export function Contact() {
   return (
     <section id="contact" className="py-0 bg-white">
-      <div className="grid lg:grid-cols-2 min-h-[520px]">
+      <div className="grid lg:grid-cols-2 min-h-[580px]">
 
         {/* Left — Active Google Map */}
         <div className="relative min-h-[340px] lg:min-h-full border-r border-slate-200">
           <iframe
             title="Daga Plastic Industries Location"
-            src="https://maps.google.com/maps?q=Daga+Plastic+Industries+Kolkata+West+Bengal+India&output=embed"
+            src="https://maps.google.com/maps?q=Poddar+Court+18+Rabindra+Sarani+Kolkata+West+Bengal+India&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0, minHeight: "340px", display: "block" }}
@@ -19,73 +19,91 @@ export function Contact() {
           />
         </div>
 
-        {/* Right — Quick Contact card (dark, matching reference image) */}
-        <div className="bg-[#111111] text-white px-8 py-12 md:px-14 md:py-16 flex flex-col justify-center">
-          <h2 className="text-xl font-extrabold uppercase tracking-widest mb-8 border-b border-white/10 pb-4">Contact US:</h2>
+        {/* Right — Quick Contact card */}
+        <div className="bg-[#111111] text-white px-8 py-10 md:px-12 md:py-12 flex flex-col justify-start overflow-y-auto">
+          <h2 className="text-xl font-extrabold uppercase tracking-widest mb-8 border-b border-white/10 pb-4">Quick Contact:</h2>
 
-          <div className="space-y-6 text-sm leading-relaxed">
+          <div className="space-y-5 text-sm leading-relaxed">
+
+            {/* Office Address */}
             <div>
-              <p className="font-extrabold uppercase tracking-wider text-white mb-1 flex items-center gap-2">
+              <p className="font-extrabold uppercase tracking-wider text-white mb-2 flex items-center gap-2">
+                <Building2 className="w-4 h-4 text-primary shrink-0" />
+                Office Address
+              </p>
+              <p className="text-white/65 pl-6 leading-relaxed">
+                Gate No. 1, 4th Floor, Room No. 409,<br />
+                Poddar Court, 18 Rabindra Sarani,<br />
+                Kolkata – 700 001, West Bengal, India.
+              </p>
+            </div>
+
+            {/* Factory Addresses */}
+            <div>
+              <p className="font-extrabold uppercase tracking-wider text-white mb-2 flex items-center gap-2">
+                <Factory className="w-4 h-4 text-primary shrink-0" />
+                Factory Address
+              </p>
+              <div className="pl-6 space-y-3">
+                <div>
+                  <span className="text-primary font-bold text-xs uppercase tracking-wider">Unit – 1</span>
+                  <p className="text-white/65 leading-relaxed mt-0.5">
+                    95/1/3B, Cossipore Road,<br />
+                    Kolkata – 700 002, West Bengal, India.
+                  </p>
+                </div>
+                <div>
+                  <span className="text-primary font-bold text-xs uppercase tracking-wider">Unit – 2</span>
+                  <p className="text-white/65 leading-relaxed mt-0.5">
+                    Plot No B-50, Ruia Industrial Area,<br />
+                    H.S. Studio Complex, Ruia, Patulia,<br />
+                    Khardah, 24 Pargana North,<br />
+                    Kolkata – 700119, West Bengal, India.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Person */}
+            <div>
+              <p className="font-extrabold uppercase tracking-wider text-white mb-1.5 flex items-center gap-2">
                 <User className="w-4 h-4 text-primary shrink-0" />
                 Contact Person
               </p>
-              <p className="text-white/70 pl-6">Mr. Vijay Daga (Chairman)</p>
-              <p className="text-white/70 pl-6">Mr. Ajay Daga (Managing Director)</p>
+              <p className="text-white/65 pl-6">Mr. Vijay Daga [Chairman]</p>
+              <p className="text-white/65 pl-6">Mr. Ajay Daga [Managing Director]</p>
             </div>
 
+            {/* Mobile */}
             <div>
-              <p className="font-extrabold uppercase tracking-wider text-white mb-1 flex items-center gap-2">
+              <p className="font-extrabold uppercase tracking-wider text-white mb-1.5 flex items-center gap-2">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                Mobile
+                Mobile No.
               </p>
-              <a
-                href="tel:+919831022610"
-                className="block text-white/70 pl-6 hover:text-primary transition-colors"
-              >
-                0 98310 22610
-              </a>
-              <a
-                href="tel:+919830274225"
-                className="block text-white/70 pl-6 hover:text-primary transition-colors"
-              >
-                0 98302 74225
-              </a>
+              <a href="tel:+919831022610" className="block text-white/65 pl-6 hover:text-primary transition-colors">+91 98310 22610</a>
+              <a href="tel:+919830274225" className="block text-white/65 pl-6 hover:text-primary transition-colors">+91 98302 74225</a>
             </div>
 
+            {/* Email */}
             <div>
-              <p className="font-extrabold uppercase tracking-wider text-white mb-1 flex items-center gap-2">
+              <p className="font-extrabold uppercase tracking-wider text-white mb-1.5 flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
                 E-Mail
               </p>
-              <a href="mailto:ajay@dagaplastic.in" className="block text-white/70 pl-6 hover:text-primary transition-colors">
-                ajay@dagaplastic.in
-              </a>
-              <a href="mailto:Info@dagaplastic.in" className="block text-white/70 pl-6 hover:text-primary transition-colors">
-                Info@dagaplastic.in
-              </a>
-              <a href="mailto:ajdaga00@gmail.com" className="block text-white/70 pl-6 hover:text-primary transition-colors">
-                ajdaga00@gmail.com
-              </a>
+              <a href="mailto:ajay@dagaplastic.in" className="block text-white/65 pl-6 hover:text-primary transition-colors">ajay@dagaplastic.in</a>
+              <a href="mailto:Info@dagaplastic.in" className="block text-white/65 pl-6 hover:text-primary transition-colors">Info@dagaplastic.in</a>
+              <a href="mailto:ajdaga00@gmail.com" className="block text-white/65 pl-6 hover:text-primary transition-colors">ajdaga00@gmail.com</a>
             </div>
 
+            {/* Website */}
             <div>
-              <p className="font-extrabold uppercase tracking-wider text-white mb-1 flex items-center gap-2">
+              <p className="font-extrabold uppercase tracking-wider text-white mb-1.5 flex items-center gap-2">
                 <Globe className="w-4 h-4 text-primary shrink-0" />
                 Website
               </p>
-              <a
-                href="https://www.dagaplastic.in"
-                target="_blank"
-                rel="noreferrer"
-                className="block text-white/70 pl-6 hover:text-primary transition-colors"
-              >
+              <a href="https://www.dagaplastic.in" target="_blank" rel="noreferrer" className="block text-white/65 pl-6 hover:text-primary transition-colors">
                 www.dagaplastic.in
               </a>
-            </div>
-
-            <div className="pt-2 border-t border-white/10">
-              <p className="font-extrabold uppercase tracking-wider text-white mb-1">Powered By:</p>
-              <p className="text-white/40 pl-0 text-xs">www.calcuttayellowpages.com</p>
             </div>
           </div>
 
@@ -94,7 +112,7 @@ export function Contact() {
             href="https://wa.me/919831022610"
             target="_blank"
             rel="noreferrer"
-            className="mt-10 inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300 w-fit text-sm"
+            className="mt-8 inline-flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300 w-fit text-sm"
             data-testid="link-whatsapp-contact"
           >
             <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg">
