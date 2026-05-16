@@ -5,7 +5,7 @@ import { FileDown, ArrowRight } from "lucide-react";
 const stats = [
   { label: "Years Experience", value: "55+" },
   { label: "Products", value: "21+" },
-  { label: "Clients Served", value: "500+" },
+  { label: "Clients Served", value: "16+" },
   { label: "Quality Standard", value: "ISO 9001" },
 ];
 
