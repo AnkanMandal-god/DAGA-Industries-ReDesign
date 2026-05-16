@@ -123,9 +123,9 @@ export function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="flex flex-col items-center justify-start pt-8 lg:pt-16"
+            className="flex flex-col items-center justify-start pt-8 lg:pt-16 lg:ml-[150px]"
           >
-            <div className="w-36 h-36 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-[0_0_40px_rgba(211,47,47,0.15)] mb-4">
+            <div className="w-48 h-48 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-[0_0_40px_rgba(211,47,47,0.15)] mb-4">
               <img src={dagaLogo} alt="Daga Plastic Industries" className="w-full h-full object-contain bg-white p-2" />
             </div>
             <p className="text-white font-black tracking-widest text-center text-sm uppercase">Daga Plastic</p>

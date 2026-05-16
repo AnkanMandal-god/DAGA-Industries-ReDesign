@@ -29,8 +29,8 @@ export function Hero() {
           alt=""
           className="absolute inset-0 w-full h-full object-cover object-right"
         />
-        {/* Gradient overlay: solid dark left → transparent right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#080c16] via-[#080c16]/88 to-[#080c16]/30" />
+        {/* Gradient overlay: readable left, image shows on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080c16] via-[#080c16]/70 to-transparent" />
         {/* Grid pattern */}
         <div
           className="absolute inset-0 opacity-[0.06]"

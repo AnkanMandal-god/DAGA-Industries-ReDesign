@@ -127,50 +127,27 @@ export function Clients() {
         )}
 
         {/* Testimonials */}
-        <div className="relative">
-          <div className="text-center mb-10">
-            <span className="text-primary font-bold tracking-widest uppercase text-xs mb-3 block">Testimonials</span>
-            <h3 className="text-2xl md:text-3xl font-black text-slate-900">What Our Partners Say</h3>
-            <div className="w-10 h-1 bg-primary rounded-full mx-auto mt-4" />
+        <div className="bg-slate-50 border border-slate-100 p-8 md:p-12 rounded-xl">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold text-slate-900">What Our Partners Say</h3>
+            <div className="w-12 h-1 bg-primary mx-auto mt-4" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((test, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="relative bg-slate-900 rounded-2xl p-7 flex flex-col overflow-hidden group hover:shadow-2xl transition-shadow duration-300"
+                transition={{ duration: 0.5, delay: idx * 0.2 }}
+                className="bg-white p-8 border border-slate-200 shadow-sm flex flex-col h-full relative"
               >
-                {/* Background glow */}
-                <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-primary/10 blur-2xl group-hover:bg-primary/20 transition-all duration-500" />
-
-                {/* Top row: abbr + rating */}
-                <div className="flex items-center justify-between mb-5 relative z-10">
-                  <div className="w-11 h-11 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center">
-                    <span className="text-primary font-black text-xs">{test.abbr}</span>
-                  </div>
-                  <div className="flex gap-0.5">
-                    {Array.from({ length: test.rating }).map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Quote icon */}
-                <Quote className="w-8 h-8 text-primary/25 mb-3 relative z-10" />
-
-                {/* Quote text */}
-                <p className="text-white/75 text-sm leading-relaxed flex-1 mb-6 relative z-10 italic">
-                  "{test.quote}"
-                </p>
-
-                {/* Author */}
-                <div className="border-t border-white/10 pt-4 relative z-10">
-                  <p className="font-bold text-white text-sm">{test.company}</p>
-                  <p className="text-white/40 text-xs mt-0.5">{test.author}</p>
+                <Quote className="w-10 h-10 text-primary/20 absolute top-6 right-6" />
+                <p className="text-slate-600 italic leading-relaxed flex-1 mb-8 relative z-10">"{test.quote}"</p>
+                <div className="border-t border-dashed border-slate-200 pt-4">
+                  <p className="font-bold text-slate-900 text-sm">{test.company}</p>
+                  <p className="text-muted-foreground text-xs">{test.author}</p>
                 </div>
               </motion.div>
             ))}
