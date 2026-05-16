@@ -24,7 +24,14 @@ const categoryColors: Record<string, string> = {
 
 export function Products() {
   const [, setLocation] = useLocation();
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(() => {
+    const flag = sessionStorage.getItem("expandProducts");
+    if (flag) {
+      sessionStorage.removeItem("expandProducts");
+      return true;
+    }
+    return false;
+  });
   const [activeCategory, setActiveCategory] = useState<Category | "All">("All");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [previewIndices, setPreviewIndices] = useState<number[]>([0, 1, 2, 3]);

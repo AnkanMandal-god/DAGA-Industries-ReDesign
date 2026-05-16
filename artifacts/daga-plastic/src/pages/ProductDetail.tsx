@@ -1,16 +1,22 @@
+import { useEffect } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { MobileStickyNav } from "@/components/layout/MobileStickyNav";
 import { DesktopFloatingActions } from "@/components/layout/DesktopFloatingActions";
 import { Button } from "@/components/ui/button";
 import { products } from "@/data/products";
-import { useParams, Link } from "wouter";
+import { useParams, Link, useLocation } from "wouter";
 import { ArrowLeft, CheckCircle2, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 export default function ProductDetail() {
   const params = useParams();
+  const [, setLocation] = useLocation();
   const product = products.find(p => p.id === params.id);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [params.id]);
 
   if (!product) {
     return (
@@ -31,10 +37,20 @@ export default function ProductDetail() {
       
       <main className="flex-1 pt-24 pb-16">
         <div className="container mx-auto px-4 md:px-6">
-          <Link href="/#products" className="inline-flex items-center text-sm font-semibold text-muted-foreground hover:text-primary transition-colors mb-8">
+          <button
+            onClick={() => {
+              sessionStorage.setItem("expandProducts", "1");
+              setLocation("/");
+              setTimeout(() => {
+                const el = document.getElementById("products");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }, 80);
+            }}
+            className="inline-flex items-center text-sm font-semibold text-muted-foreground hover:text-primary transition-colors mb-8"
+          >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Products
-          </Link>
+          </button>
 
           {/* Hero Area */}
           <div className="mb-12">
