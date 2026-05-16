@@ -48,7 +48,7 @@ export function About() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
 
         {/* Top row: description left + logo right */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_220px] gap-12 items-start max-w-5xl mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 items-start max-w-5xl mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -123,7 +123,7 @@ export function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="flex flex-col items-center justify-start pt-8 lg:pt-16 lg:ml-[150px]"
+            className="flex flex-col items-center justify-start pt-8 lg:pt-12"
           >
             <div className="w-48 h-48 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-[0_0_40px_rgba(211,47,47,0.15)] mb-4">
               <img src={dagaLogo} alt="Daga Plastic Industries" className="w-full h-full object-contain bg-white p-2" />

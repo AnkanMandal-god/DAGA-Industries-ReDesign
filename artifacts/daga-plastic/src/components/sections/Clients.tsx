@@ -143,7 +143,7 @@ export function Clients() {
                 transition={{ duration: 0.5, delay: idx * 0.2 }}
                 className="bg-white p-8 border border-slate-200 shadow-sm flex flex-col h-full relative"
               >
-                <Quote className="w-10 h-10 text-primary/20 absolute top-6 right-6" />
+                <Quote className="w-5 h-5 text-primary/30 absolute top-6 right-6" />
                 <p className="text-slate-600 italic leading-relaxed flex-1 mb-8 relative z-10">"{test.quote}"</p>
                 <div className="border-t border-dashed border-slate-200 pt-4">
                   <p className="font-bold text-slate-900 text-sm">{test.company}</p>
