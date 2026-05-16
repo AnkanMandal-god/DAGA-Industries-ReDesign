@@ -1,26 +1,12 @@
-import { User, Phone, Mail, Globe, MapPin, Building2, Factory } from "lucide-react";
+import { User, Phone, Mail, Globe, Building2, Factory } from "lucide-react";
 
 export function Contact() {
   return (
     <section id="contact" className="py-0 bg-white">
       <div className="grid lg:grid-cols-2 min-h-[580px]">
 
-        {/* Left — Active Google Map */}
-        <div className="relative min-h-[340px] lg:min-h-full border-r border-slate-200">
-          <iframe
-            title="Daga Plastic Industries Location"
-            src="https://maps.google.com/maps?q=Poddar+Court+18+Rabindra+Sarani+Kolkata+West+Bengal+India&output=embed"
-            width="100%"
-            height="100%"
-            style={{ border: 0, minHeight: "340px", display: "block" }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-
-        {/* Right — Quick Contact card */}
-        <div className="bg-[#111111] text-white px-8 py-10 md:px-12 md:py-12 flex flex-col justify-start overflow-y-auto">
+        {/* LEFT — Quick Contact card (dark) */}
+        <div className="bg-[#111111] text-white px-8 py-10 md:px-12 md:py-12 flex flex-col justify-start overflow-y-auto order-2 lg:order-1">
           <h2 className="text-xl font-extrabold uppercase tracking-widest mb-8 border-b border-white/10 pb-4">Quick Contact:</h2>
 
           <div className="space-y-5 text-sm leading-relaxed">
@@ -121,6 +107,21 @@ export function Contact() {
             Connect on WhatsApp
           </a>
         </div>
+
+        {/* RIGHT — Google Map (constrained height on lg) */}
+        <div className="relative min-h-[340px] lg:min-h-0 border-l border-slate-800 order-1 lg:order-2">
+          <iframe
+            title="Daga Plastic Industries Location"
+            src="https://maps.google.com/maps?q=Poddar+Court+18+Rabindra+Sarani+Kolkata+West+Bengal+India&output=embed"
+            width="100%"
+            height="100%"
+            style={{ border: 0, minHeight: "340px", display: "block", height: "100%" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+
       </div>
     </section>
   );

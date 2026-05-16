@@ -1,86 +1,172 @@
-import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown, ChevronUp, Quote, Star } from "lucide-react";
+
+const allClients = [
+  { name: "Indian Oil Corporation", abbr: "IOC" },
+  { name: "Hindustan Petroleum", abbr: "HP" },
+  { name: "Bharat Petroleum", abbr: "BPCL" },
+  { name: "BSNL", abbr: "BSNL" },
+  { name: "Berger Paints", abbr: "BER" },
+  { name: "Asian Paints", abbr: "AP" },
+  { name: "Pidilite Industries", abbr: "PDL" },
+  { name: "Tata Chemicals", abbr: "TC" },
+  { name: "CEAT Tyres", abbr: "CEAT" },
+  { name: "Coromandel International", abbr: "CORO" },
+  { name: "Chambal Fertilisers", abbr: "CFL" },
+  { name: "Rallis India", abbr: "RL" },
+];
+
+const testimonials = [
+  {
+    quote: "Daga Plastic's 210L barrels have been integral to our lubricant packaging operations for over a decade. Consistent quality, zero failures.",
+    author: "Procurement Manager",
+    company: "Indian Oil Corporation",
+    abbr: "IOC",
+    rating: 5,
+  },
+  {
+    quote: "Their ability to deliver custom short-run batches without compromising on specifications is rare in this industry. Truly a partner, not just a supplier.",
+    author: "Supply Chain Lead",
+    company: "Berger Paints",
+    abbr: "BER",
+    rating: 5,
+  },
+  {
+    quote: "ISO-certified products, Pan-India reach, and a team that actually picks up the phone. Daga is our first call for industrial packaging.",
+    author: "Operations Director",
+    company: "Bharat Petroleum",
+    abbr: "BPCL",
+    rating: 5,
+  },
+];
 
 export function Clients() {
-  const clients = [
-    { name: "Indian Oil", textLogo: "IndianOil", abbr: "IOC" },
-    { name: "Hindustan Petroleum", textLogo: "HP", abbr: "HP" },
-    { name: "Bharat Petroleum", textLogo: "BPCL", abbr: "BPCL" },
-    { name: "BSNL", textLogo: "BSNL", abbr: "BSNL" },
-    { name: "Berger Paints", textLogo: "Berger", abbr: "BP" },
-  ];
+  const [showAll, setShowAll] = useState(false);
 
-  const testimonials = [
-    {
-      quote: "Daga Plastic's 210L barrels have been integral to our lubricant packaging operations for over a decade. Consistent quality, zero failures.",
-      author: "Procurement Manager",
-      company: "Indian Oil Corporation"
-    },
-    {
-      quote: "Their ability to deliver custom short-run batches without compromising on specifications is rare in this industry. Truly a partner, not just a supplier.",
-      author: "Supply Chain Lead",
-      company: "Berger Paints"
-    },
-    {
-      quote: "ISO-certified products, Pan-India reach, and a team that actually picks up the phone. Daga is our first call for industrial packaging.",
-      author: "Operations Director",
-      company: "BSNL"
+  const getVisibleCount = () => {
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 1024) return 5;
+      if (window.innerWidth >= 768) return 4;
+      return 4;
     }
-  ];
+    return 5;
+  };
+
+  const initialCount = getVisibleCount();
+  const visibleClients = showAll ? allClients : allClients.slice(0, initialCount);
 
   return (
-    <section id="clients" className="py-24 bg-gradient-to-b from-slate-50 to-white relative">
-      <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(0,0,0,0.5) 60px, rgba(0,0,0,0.5) 61px)' }} />
-      
+    <section id="clients" className="py-24 bg-white relative overflow-hidden">
+      {/* Subtle diagonal rule */}
+      <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(0,0,0,0.8) 60px, rgba(0,0,0,0.8) 61px)" }} />
+
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Trusted By India's Industrial Leaders</h2>
-          <div className="w-16 h-1.5 bg-primary mx-auto mb-6"></div>
-          <p className="text-muted-foreground text-lg">
-            We supply packaging solutions for acid, chemicals, solvents, sauces, pickles, adhesives, water treatment, lubricating, hair oil, edible oil, phenyl, resins, insecticides, pesticides, ink, and more.
+        {/* Heading */}
+        <motion.div
+          className="text-center max-w-3xl mx-auto mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Our Partners</span>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight">
+            Trusted By India's Industrial Leaders
+          </h2>
+          <div className="w-16 h-1 bg-primary rounded-full mx-auto mb-6" />
+          <p className="text-slate-500 text-base leading-relaxed">
+            Supplying packaging for acid, chemicals, solvents, sauces, pickles, adhesives, water treatment, lubricants, edible oil, phenyl, resins, insecticides, pesticides, ink, and more.
           </p>
+        </motion.div>
+
+        {/* Client logo grid */}
+        <div className="mb-4">
+          <motion.div layout className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+            <AnimatePresence>
+              {visibleClients.map((client, i) => (
+                <motion.div
+                  key={client.name}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.35, delay: i * 0.04 }}
+                  className="group aspect-video bg-slate-50 border border-slate-200 hover:border-primary/50 hover:bg-white flex flex-col items-center justify-center p-5 transition-all duration-300 rounded-lg hover:shadow-md"
+                >
+                  <span className="text-2xl font-black text-slate-300 group-hover:text-primary transition-colors duration-300 tracking-tighter leading-none mb-2">
+                    {client.abbr}
+                  </span>
+                  <span className="text-[10px] font-semibold text-slate-400 group-hover:text-slate-600 text-center transition-colors duration-300 leading-tight">
+                    {client.name}
+                  </span>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8 mb-24">
-          {clients.map((client, i) => (
-            <motion.div
-              key={client.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="group aspect-video bg-white shadow-sm border border-border flex flex-col items-center justify-center p-6 hover:border-primary/50 transition-colors"
+        {/* Show more / less */}
+        {allClients.length > initialCount && (
+          <div className="flex justify-center mt-6 mb-16">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-slate-200 hover:border-primary text-slate-500 hover:text-primary text-sm font-semibold transition-all duration-300 bg-white hover:bg-primary/5"
             >
-              <div className="grayscale group-hover:grayscale-0 opacity-50 group-hover:opacity-100 transition-all duration-300 ease-in-out flex flex-col items-center gap-3">
-                <span className="text-3xl font-black tracking-tighter text-slate-700 group-hover:text-primary">{client.textLogo}</span>
-                <span className="text-xs font-semibold text-center text-muted-foreground">{client.name}</span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Testimonials Sub-section */}
-        <div className="bg-slate-50 border border-slate-100 p-8 md:p-12 rounded-xl">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-slate-900">What Our Partners Say</h3>
-            <div className="w-12 h-1 bg-primary mx-auto mt-4"></div>
+              {showAll ? (
+                <>Show Less <ChevronUp className="w-4 h-4" /></>
+              ) : (
+                <>Show All {allClients.length} Clients <ChevronDown className="w-4 h-4" /></>
+              )}
+            </button>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        )}
+
+        {/* Testimonials */}
+        <div className="relative">
+          <div className="text-center mb-10">
+            <span className="text-primary font-bold tracking-widest uppercase text-xs mb-3 block">Testimonials</span>
+            <h3 className="text-2xl md:text-3xl font-black text-slate-900">What Our Partners Say</h3>
+            <div className="w-10 h-1 bg-primary rounded-full mx-auto mt-4" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {testimonials.map((test, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.2 }}
-                className="bg-white p-8 border border-slate-200 shadow-sm flex flex-col h-full relative"
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                className="relative bg-slate-900 rounded-2xl p-7 flex flex-col overflow-hidden group hover:shadow-2xl transition-shadow duration-300"
               >
-                <Quote className="w-10 h-10 text-primary/20 absolute top-6 right-6" />
-                <p className="text-slate-600 italic leading-relaxed flex-1 mb-8 relative z-10">"{test.quote}"</p>
-                <div className="border-t border-dashed border-slate-200 pt-4">
-                  <p className="font-bold text-slate-900 text-sm">{test.company}</p>
-                  <p className="text-muted-foreground text-xs">{test.author}</p>
+                {/* Background glow */}
+                <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-primary/10 blur-2xl group-hover:bg-primary/20 transition-all duration-500" />
+
+                {/* Top row: abbr + rating */}
+                <div className="flex items-center justify-between mb-5 relative z-10">
+                  <div className="w-11 h-11 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center">
+                    <span className="text-primary font-black text-xs">{test.abbr}</span>
+                  </div>
+                  <div className="flex gap-0.5">
+                    {Array.from({ length: test.rating }).map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Quote icon */}
+                <Quote className="w-8 h-8 text-primary/25 mb-3 relative z-10" />
+
+                {/* Quote text */}
+                <p className="text-white/75 text-sm leading-relaxed flex-1 mb-6 relative z-10 italic">
+                  "{test.quote}"
+                </p>
+
+                {/* Author */}
+                <div className="border-t border-white/10 pt-4 relative z-10">
+                  <p className="font-bold text-white text-sm">{test.company}</p>
+                  <p className="text-white/40 text-xs mt-0.5">{test.author}</p>
                 </div>
               </motion.div>
             ))}
