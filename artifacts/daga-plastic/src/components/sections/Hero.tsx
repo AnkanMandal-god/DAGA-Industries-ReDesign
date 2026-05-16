@@ -55,13 +55,6 @@ export function Hero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/8 backdrop-blur-md border border-white/15 rounded-full mb-5 md:mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              <span className="text-[10px] md:text-xs font-semibold tracking-widest uppercase text-white/80">
-                ISO 9001 Certified
-              </span>
-            </div>
-
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-4 md:mb-6">
               Engineering Precision
               <br />
