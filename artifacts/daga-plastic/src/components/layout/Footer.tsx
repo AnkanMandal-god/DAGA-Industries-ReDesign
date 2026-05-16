@@ -29,13 +29,31 @@ export function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact</h4>
-            <ul className="space-y-3 text-sm">
-              <li>+91 98310 22610</li>
-              <li>+91 98302 74225</li>
-              <li>ajay@dagaplastic.in</li>
-              <li>Info@dagaplastic.in</li>
-            </ul>
+            <h4 className="text-primary font-black mb-6 uppercase tracking-wider text-sm">Quick Contact:</h4>
+            <div className="space-y-4 text-sm">
+              <div>
+                <p className="text-white font-bold uppercase tracking-wider text-xs mb-1">Contact Person</p>
+                <p className="text-slate-300">Mr. Vijay Daga (Chairman)</p>
+                <p className="text-slate-300">Mr. Ajay Daga (Managing Director)</p>
+              </div>
+              <div>
+                <p className="text-white font-bold uppercase tracking-wider text-xs mb-1">Mobile</p>
+                <p className="text-slate-300">0 98310 22610 / 0 98302 74225</p>
+              </div>
+              <div>
+                <p className="text-white font-bold uppercase tracking-wider text-xs mb-1">E-Mail</p>
+                <p className="text-slate-300">ajay@dagaplastic.in / Info@dagaplastic.in /</p>
+                <p className="text-slate-300">ajdaga00@gmail.com</p>
+              </div>
+              <div>
+                <p className="text-white font-bold uppercase tracking-wider text-xs mb-1">Website</p>
+                <p className="text-slate-300">www.dagaplastic.in</p>
+              </div>
+              <div>
+                <p className="text-white font-bold uppercase tracking-wider text-xs mb-1">Powered By:</p>
+                <p className="text-slate-300">www.calcuttayellowpages.com</p>
+              </div>
+            </div>
           </div>
         </div>
 
