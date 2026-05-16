@@ -83,7 +83,8 @@ export function About() {
                   data-[state=closed]:slide-out-to-top-0
                   data-[state=open]:zoom-in-100
                   data-[state=closed]:zoom-out-100
-                  duration-300"
+                  duration-300
+                  [&>button]:text-white [&>button]:opacity-70 [&>button]:hover:opacity-100 [&>button]:hover:bg-white/15 [&>button]:rounded-full [&>button]:transition-all"
                 style={{
                   background: "rgba(255,255,255,0.12)",
                   backdropFilter: "blur(28px)",
