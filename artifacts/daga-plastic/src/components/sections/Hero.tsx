@@ -47,7 +47,7 @@ export function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex-1 flex items-center pt-24 pb-8">
+      <div className="relative z-10 flex-1 flex items-center pt-20 md:pt-24 pb-6 md:pb-8">
         <div className="container mx-auto px-4 md:px-6 text-white">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
@@ -55,29 +55,30 @@ export function Hero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/8 backdrop-blur-md border border-white/15 rounded-full mb-8">
-              <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <span className="text-xs font-semibold tracking-widest uppercase text-white/80">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/8 backdrop-blur-md border border-white/15 rounded-full mb-5 md:mb-8">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              <span className="text-[10px] md:text-xs font-semibold tracking-widest uppercase text-white/80">
                 ISO 9001 Certified
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.08] tracking-tight mb-6">
-              Engineering Precision{" "}
-              <br className="hidden sm:block" />
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-4 md:mb-6">
+              Engineering Precision
+              <br />
               in{" "}
-              <span className="text-primary">Plastic Manufacturing</span>
-              <br className="hidden sm:block" />
+              <span className="text-primary">Plastic</span>
+              <br />
+              <span className="text-primary">Manufacturing</span>
+              <br />
               Since 1969
             </h1>
 
-            {/* ── SWAPPED: quote is now on top ── */}
-            <div className="text-white/50 italic text-sm border-l-2 border-primary/60 pl-3 mb-6 max-w-lg leading-relaxed">
+            {/* Quote — hidden on smallest screens to reduce clutter */}
+            <div className="hidden sm:block text-white/50 italic text-sm border-l-2 border-primary/60 pl-3 mb-5 md:mb-6 max-w-lg leading-relaxed">
               "Quality Manufacturing Is A System, Not Just A Slogan. We Serve With Best Quality And Service. We Are Committed To Customer Satisfaction."
             </div>
 
-            {/* ── SWAPPED: paragraph is now below ── */}
-            <p className="text-base md:text-lg text-white/65 mb-10 max-w-xl font-light leading-relaxed">
+            <p className="text-sm md:text-base lg:text-lg text-white/65 mb-7 md:mb-10 max-w-xl font-light leading-relaxed">
               ISO 9001 Certified. Trusted partner to India's energy and
               industrial leaders — delivering uncompromising quality at scale.
             </p>
@@ -87,19 +88,18 @@ export function Hero() {
               <Button
                 size="lg"
                 onClick={handleDownloadCatalog}
-                className="bg-primary hover:bg-primary/85 text-white rounded-full px-8 py-6 text-base font-semibold transition-all duration-300"
+                className="bg-primary hover:bg-primary/85 text-white rounded-full px-6 md:px-8 py-5 md:py-6 text-sm md:text-base font-semibold transition-all duration-300"
                 data-testid="button-download-catalog"
               >
-                <FileDown className="mr-2 h-5 w-5" />
-                Download Product Catalog
+                <FileDown className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+                Download Catalog
               </Button>
 
-              {/* Glassmorphic "Request Quote" button */}
               <Button
                 size="lg"
                 variant="outline"
                 asChild
-                className="border-white/25 text-white rounded-full px-8 py-6 text-base font-semibold group transition-all duration-300 hover:border-white/50"
+                className="border-white/25 text-white rounded-full px-6 md:px-8 py-5 md:py-6 text-sm md:text-base font-semibold group transition-all duration-300 hover:border-white/50"
                 style={{
                   background: "rgba(255,255,255,0.08)",
                   backdropFilter: "blur(12px)",
@@ -109,7 +109,7 @@ export function Hero() {
               >
                 <a href="#inquiry">
                   Request Quote
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
             </div>
@@ -131,7 +131,7 @@ export function Hero() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
-                className="flex flex-col items-center justify-center py-6 px-4 relative group cursor-default"
+                className="flex flex-col items-center justify-center py-4 md:py-6 px-3 md:px-4 relative group cursor-default"
               >
                 {i < stats.length - 1 && (
                   <div className="absolute right-0 top-4 bottom-4 w-[1px] bg-white/10 hidden md:block" />
@@ -139,10 +139,10 @@ export function Hero() {
                 {i < 2 && (
                   <div className="absolute bottom-0 left-4 right-4 h-[1px] bg-white/10 md:hidden" />
                 )}
-                <div className="text-2xl md:text-3xl font-black text-white mb-1 group-hover:text-primary transition-colors duration-300">
+                <div className="text-xl md:text-3xl font-black text-white mb-0.5 group-hover:text-primary transition-colors duration-300">
                   {stat.value}
                 </div>
-                <div className="text-[10px] md:text-[11px] text-white/45 uppercase tracking-[0.15em] font-medium">
+                <div className="text-[9px] md:text-[11px] text-white/45 uppercase tracking-[0.12em] font-medium text-center">
                   {stat.label}
                 </div>
               </motion.div>

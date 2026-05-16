@@ -57,7 +57,7 @@ export function Products() {
   return (
     <section
       id="products"
-      className="py-24 bg-[#0a0e1a] text-white relative overflow-hidden"
+      className="py-14 md:py-24 bg-[#0a0e1a] text-white relative overflow-hidden"
     >
       <div
         className="absolute inset-0 opacity-[0.04]"
@@ -108,24 +108,24 @@ export function Products() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="grid lg:grid-cols-2 gap-10 items-center"
+            className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center"
           >
             <div>
-              <p className="text-base md:text-lg text-white/60 leading-relaxed mb-8 font-light">
-                Precision-engineered plastic solutions across Industrial, Food Grade,
-                Agricultural, and Household segments — built to ISO 9001 standards.
+              <p className="text-sm md:text-base lg:text-lg text-white/60 leading-relaxed mb-6 md:mb-8 font-light">
+                Precision-engineered plastic solutions across Containers &amp; Drums,
+                Bottles, Caps, Agricultural, and Moulded Components — built to ISO 9001 standards.
               </p>
               <button
                 onClick={() => setIsExpanded(true)}
-                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/85 text-white rounded-full px-8 py-3.5 text-base font-bold shadow-lg shadow-primary/20 transition-all duration-300 group"
+                className="inline-flex items-center gap-2 bg-primary hover:bg-primary/85 text-white rounded-full px-7 py-3 text-sm md:text-base font-bold shadow-lg shadow-primary/20 transition-all duration-300 group"
               >
                 Browse All Products
-                <ChevronDown className="h-5 w-5 group-hover:translate-y-0.5 transition-transform" />
+                <ChevronDown className="h-4 w-4 md:h-5 md:w-5 group-hover:translate-y-0.5 transition-transform" />
               </button>
             </div>
 
-            {/* 2×2 cycling grid */}
-            <div className="grid grid-cols-2 gap-3">
+            {/* 2×2 cycling grid — hidden on mobile to avoid congestion */}
+            <div className="hidden lg:grid grid-cols-2 gap-3">
               <AnimatePresence mode="popLayout">
                 {previewIndices.map((idx, position) => {
                   const product = products[idx];

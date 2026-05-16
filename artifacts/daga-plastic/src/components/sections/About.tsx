@@ -35,7 +35,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-[#0d1117] text-white relative overflow-hidden">
+    <section id="about" className="py-14 md:py-24 bg-[#0d1117] text-white relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -48,7 +48,7 @@ export function About() {
       <div className="container mx-auto px-4 md:px-6 relative z-10">
 
         {/* Top row: description left + logo right */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 items-start max-w-5xl mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 lg:gap-12 items-start max-w-5xl mb-10 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -58,10 +58,10 @@ export function About() {
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
               Industrial Profile
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 tracking-tight">
               About Us
             </h2>
-            <p className="text-base text-white/65 leading-relaxed mb-8 font-light">
+            <p className="text-sm md:text-base text-white/65 leading-relaxed mb-6 md:mb-8 font-light">
               Since 1969, Daga Plastic Industries has combined technical expertise with automated manufacturing to deliver high-precision, ISO-certified packaging solutions for India's industrial leaders. We provide total, scalable solutions — from custom design to nationwide distribution — across the petrochemical, agrochemical, food-processing, and consumer segments. Headquartered in Kolkata, we have grown from a single facility into a high-turnover industrial powerhouse.
             </p>
 
@@ -123,7 +123,7 @@ export function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="flex flex-col items-center justify-start pt-8 lg:pt-12 lg:ml-[150px]"
+            className="hidden lg:flex flex-col items-center justify-start pt-12 lg:ml-[150px]"
           >
             <div className="w-48 h-48 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-[0_0_40px_rgba(211,47,47,0.15)] mb-4">
               <img src={dagaLogo} alt="Daga Plastic Industries" className="w-full h-full object-contain bg-white p-2" />
