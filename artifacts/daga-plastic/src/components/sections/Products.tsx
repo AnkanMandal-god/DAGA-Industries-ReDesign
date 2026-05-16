@@ -7,19 +7,19 @@ import { useLocation } from "wouter";
 
 const categories: (Category | "All")[] = [
   "All",
-  "Industrial Containers",
-  "Food Grade",
+  "Containers & Drums",
+  "Bottles & Packaging",
+  "Caps & Closures",
   "Agricultural",
-  "Household",
-  "Other",
+  "Moulded Components",
 ];
 
 const categoryColors: Record<string, string> = {
-  "Industrial Containers": "bg-slate-700",
-  "Food Grade": "bg-emerald-800",
-  "Agricultural": "bg-amber-800",
-  "Household": "bg-blue-800",
-  "Other": "bg-slate-600",
+  "Containers & Drums": "bg-slate-700",
+  "Bottles & Packaging": "bg-blue-800",
+  "Caps & Closures": "bg-red-900",
+  "Agricultural": "bg-emerald-800",
+  "Moulded Components": "bg-amber-800",
 };
 
 export function Products() {
@@ -92,6 +92,7 @@ export function Products() {
             <p className="text-white/35 text-xs font-medium tracking-widest uppercase pb-1">
               21 Products · 5 Categories
             </p>
+
           </div>
         </motion.div>
 
