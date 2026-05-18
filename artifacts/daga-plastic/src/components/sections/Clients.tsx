@@ -1,18 +1,23 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, ChevronUp, Quote, Star } from "lucide-react";
+import { ChevronDown, ChevronUp, Quote } from "lucide-react";
+import hpclLogo from "@assets/image_1779126299723.png";
+import bpclLogo from "@assets/image_1779126312161.png";
+import bergerLogo from "@assets/image_1779126323211.png";
+import motherDairyLogo from "@assets/image_1779126329728.png";
+import bhagirathiLogo from "@assets/image_1779126335930.png";
 
 const allClients = [
   { name: "Indian Oil Corporation Ltd.", abbr: "IOC" },
-  { name: "Hindustan Petroleum Corporation Ltd.", abbr: "HPCL" },
-  { name: "Bharat Petroleum Corp Ltd.", abbr: "BPCL" },
+  { name: "Hindustan Petroleum Corporation Ltd.", abbr: "HPCL", logo: hpclLogo },
+  { name: "Bharat Petroleum Corp Ltd.", abbr: "BPCL", logo: bpclLogo },
   { name: "Hindustan Colas Pvt Ltd.", abbr: "HCOL" },
   { name: "Exide Industries Ltd.", abbr: "EXIDE" },
   { name: "BSNL", abbr: "BSNL" },
   { name: "Nalco India Ltd.", abbr: "NALCO" },
-  { name: "Berger Paints India Ltd.", abbr: "BERGER" },
-  { name: "Mother Dairy, Calcutta", abbr: "MD" },
-  { name: "Bhagirathi Dairy Coop. MILK Producers Union Ltd.", abbr: "BDCM" },
+  { name: "Berger Paints India Ltd.", abbr: "BERGER", logo: bergerLogo },
+  { name: "Mother Dairy, Calcutta", abbr: "MD", logo: motherDairyLogo },
+  { name: "Bhagirathi Dairy Coop. MILK Producers Union Ltd.", abbr: "BDCM", logo: bhagirathiLogo },
   { name: "The Freyssinet Pre Co.", abbr: "FPC" },
   { name: "Quaker Chemicals India Ltd.", abbr: "QCL" },
   { name: "Hindustan Oil Industries", abbr: "HOI" },
@@ -27,21 +32,20 @@ const testimonials = [
     author: "Procurement Manager",
     company: "Indian Oil Corporation Ltd.",
     abbr: "IOC",
-    rating: 5,
   },
   {
     quote: "Their ability to deliver custom short-run batches without compromising on specifications is rare in this industry. Truly a partner, not just a supplier.",
     author: "Supply Chain Lead",
     company: "Berger Paints India Ltd.",
     abbr: "BERGER",
-    rating: 5,
+    logo: bergerLogo,
   },
   {
     quote: "ISO-certified products, Pan-India reach, and a team that actually picks up the phone. Daga is our first call for industrial packaging.",
     author: "Operations Director",
     company: "Bharat Petroleum Corp Ltd.",
     abbr: "BPCL",
-    rating: 5,
+    logo: bpclLogo,
   },
 ];
 
@@ -62,7 +66,6 @@ export function Clients() {
 
   return (
     <section id="clients" className="py-24 bg-white relative overflow-hidden">
-      {/* Subtle diagonal rule */}
       <div className="absolute inset-0 opacity-[0.025]" style={{ backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(0,0,0,0.8) 60px, rgba(0,0,0,0.8) 61px)" }} />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -96,14 +99,24 @@ export function Clients() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.35, delay: i * 0.04 }}
-                  className="group aspect-video bg-slate-50 border border-slate-200 hover:border-primary/50 hover:bg-white flex flex-col items-center justify-center p-5 transition-all duration-300 rounded-lg hover:shadow-md"
+                  className="group aspect-video bg-slate-50 border border-slate-200 hover:border-primary/40 hover:bg-white flex flex-col items-center justify-center p-4 transition-all duration-300 rounded-lg hover:shadow-md"
                 >
-                  <span className="text-2xl font-black text-slate-300 group-hover:text-primary transition-colors duration-300 tracking-tighter leading-none mb-2">
-                    {client.abbr}
-                  </span>
-                  <span className="text-[10px] font-semibold text-slate-400 group-hover:text-slate-600 text-center transition-colors duration-300 leading-tight">
-                    {client.name}
-                  </span>
+                  {"logo" in client && client.logo ? (
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="max-h-14 max-w-full object-contain transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-sm"
+                    />
+                  ) : (
+                    <>
+                      <span className="text-2xl font-black text-slate-300 group-hover:text-primary transition-colors duration-300 tracking-tighter leading-none mb-2">
+                        {client.abbr}
+                      </span>
+                      <span className="text-[10px] font-semibold text-slate-400 group-hover:text-slate-600 text-center transition-colors duration-300 leading-tight">
+                        {client.name}
+                      </span>
+                    </>
+                  )}
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -145,9 +158,22 @@ export function Clients() {
               >
                 <Quote className="w-5 h-5 text-primary/30 absolute top-6 right-6" />
                 <p className="text-slate-600 italic leading-relaxed flex-1 mb-8 relative z-10">"{test.quote}"</p>
-                <div className="border-t border-dashed border-slate-200 pt-4">
-                  <p className="font-bold text-slate-900 text-sm">{test.company}</p>
-                  <p className="text-muted-foreground text-xs">{test.author}</p>
+                <div className="border-t border-dashed border-slate-200 pt-4 flex items-center gap-3">
+                  {"logo" in test && test.logo ? (
+                    <img
+                      src={test.logo}
+                      alt={test.company}
+                      className="h-10 w-auto object-contain shrink-0"
+                    />
+                  ) : (
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                      <span className="text-primary font-black text-xs">{test.abbr}</span>
+                    </div>
+                  )}
+                  <div>
+                    <p className="font-bold text-slate-900 text-sm">{test.company}</p>
+                    <p className="text-muted-foreground text-xs">{test.author}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
