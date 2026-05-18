@@ -64,21 +64,21 @@ export function Hero() {
           <AnimatePresence>
             {isVisible && (
               <motion.div
-                className="md:hidden flex items-center gap-3 mb-6"
+                className="md:hidden flex items-center gap-4 mb-6"
                 initial={{ opacity: 0, y: -12 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
               >
                 <div
-                  className="w-16 h-16 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-xl"
+                  className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-xl"
                   style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}
                 >
                   <img src={dagaLogo} alt="Daga Logo" className="w-full h-full object-contain p-1" />
                 </div>
                 <div>
-                  <span className="text-3xl font-black tracking-tight text-white leading-none block">DAGA</span>
-                  <span className="text-[10px] text-white/50 uppercase tracking-widest">Plastic Industries</span>
+                  <span className="text-4xl font-black tracking-tight text-white leading-none block">DAGA</span>
+                  <span className="text-xs text-white/50 uppercase tracking-widest">Plastic Industries</span>
                 </div>
               </motion.div>
             )}
@@ -146,7 +146,7 @@ export function Hero() {
             <AnimatePresence>
               {isVisible && (
                 <motion.div
-                  className="hidden md:flex flex-col items-center gap-4 shrink-0 ml-auto"
+                  className="hidden md:flex flex-col items-center gap-4 shrink-0 ml-auto mr-[200px]"
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
