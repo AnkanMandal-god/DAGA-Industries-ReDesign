@@ -72,7 +72,7 @@ export function Hero() {
             </div>
 
             <p className="text-xs md:text-base lg:text-lg text-white/65 mb-5 md:mb-10 max-w-xl font-light leading-relaxed">
-              ISO 9001 Certified manufacturer of jerrycans, drums, bottles &amp; moulded components — trusted by India's top industrial corporations since 1969.
+              ISO 9001 Certified. Trusted partner to India's energy and industrial leaders — delivering uncompromising quality at scale.
             </p>
 
             {/* CTAs */}
