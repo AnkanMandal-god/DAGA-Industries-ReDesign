@@ -5,11 +5,17 @@ import dagaLogo from "@assets/image_1778790689221.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 60);
+    const handleScroll = () => {
+      const y = window.scrollY;
+      setIsScrolled(y > 60);
+      setIsHeroVisible(y < window.innerHeight * 0.75);
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -35,8 +41,16 @@ export function Navbar() {
       className="fixed top-0 w-full z-50"
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#home" className="flex items-center gap-2.5 group">
+        {/* Logo — fades out when hero is visible, fades in when scrolled down */}
+        <a
+          href="#home"
+          className="flex items-center gap-2.5 group"
+          style={{
+            opacity: isHeroVisible ? 0 : 1,
+            pointerEvents: isHeroVisible ? "none" : "auto",
+            transition: "opacity 0.5s ease",
+          }}
+        >
           <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary/30 group-hover:ring-primary/70 transition-all duration-300 bg-white shadow-sm">
             <img src={dagaLogo} alt="Daga Logo" className="w-full h-full object-contain" />
           </div>
