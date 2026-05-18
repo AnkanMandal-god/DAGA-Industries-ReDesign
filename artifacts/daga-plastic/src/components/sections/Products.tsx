@@ -124,8 +124,8 @@ export function Products() {
               </button>
             </div>
 
-            {/* 2×2 cycling grid — hidden on mobile to avoid congestion */}
-            <div className="hidden lg:grid grid-cols-2 gap-3">
+            {/* 2×2 cycling grid */}
+            <div className="grid grid-cols-2 gap-3">
               <AnimatePresence mode="popLayout">
                 {previewIndices.map((idx, position) => {
                   const product = products[idx];
