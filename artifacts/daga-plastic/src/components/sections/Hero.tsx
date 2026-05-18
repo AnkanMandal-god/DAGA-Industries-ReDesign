@@ -66,33 +66,30 @@ export function Hero() {
               Since 1969
             </h1>
 
-            {/* Quote — hidden on smallest screens to reduce clutter */}
-            <div className="hidden sm:block text-white/50 italic text-sm border-l-2 border-primary/60 pl-3 mb-5 md:mb-6 max-w-lg leading-relaxed">
-              "Quality Manufacturing Is A System, Not Just A Slogan. We Serve With Best Quality And Service. We Are Committed To Customer Satisfaction."
+            {/* Company motto */}
+            <div className="text-white/50 italic text-xs md:text-sm border-l-2 border-primary/60 pl-3 mb-4 md:mb-6 max-w-lg leading-relaxed">
+              "Quality Manufacturing Is A System, Not Just A Slogan."
             </div>
 
-            <p className="text-sm md:text-base lg:text-lg text-white/65 mb-7 md:mb-10 max-w-xl font-light leading-relaxed">
-              ISO 9001 Certified. Trusted partner to India's energy and
-              industrial leaders — delivering uncompromising quality at scale.
+            <p className="text-xs md:text-base lg:text-lg text-white/65 mb-5 md:mb-10 max-w-xl font-light leading-relaxed">
+              ISO 9001 Certified manufacturer of jerrycans, drums, bottles &amp; moulded components — trusted by India's top industrial corporations since 1969.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-row gap-2 md:gap-3">
               <Button
-                size="lg"
                 onClick={handleDownloadCatalog}
-                className="bg-primary hover:bg-primary/85 text-white rounded-full px-6 md:px-8 py-5 md:py-6 text-sm md:text-base font-semibold transition-all duration-300"
+                className="bg-primary hover:bg-primary/85 text-white rounded-full px-4 md:px-8 py-2 md:py-6 text-xs md:text-base font-semibold transition-all duration-300 h-auto"
                 data-testid="button-download-catalog"
               >
-                <FileDown className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+                <FileDown className="mr-1.5 h-3.5 w-3.5 md:h-5 md:w-5 shrink-0" />
                 Download Catalog
               </Button>
 
               <Button
-                size="lg"
                 variant="outline"
                 asChild
-                className="border-white/25 text-white rounded-full px-6 md:px-8 py-5 md:py-6 text-sm md:text-base font-semibold group transition-all duration-300 hover:border-white/50"
+                className="border-white/25 text-white rounded-full px-4 md:px-8 py-2 md:py-6 text-xs md:text-base font-semibold group transition-all duration-300 hover:border-white/50 h-auto"
                 style={{
                   background: "rgba(255,255,255,0.08)",
                   backdropFilter: "blur(12px)",
@@ -102,7 +99,7 @@ export function Hero() {
               >
                 <a href="#inquiry">
                   Request Quote
-                  <ArrowRight className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-1.5 h-3.5 w-3.5 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform shrink-0" />
                 </a>
               </Button>
             </div>
