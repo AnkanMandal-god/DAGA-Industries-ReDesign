@@ -1,13 +1,34 @@
+import { useEffect, useRef, useState } from "react";
 import { Phone, MessageCircle, FileText, Mail } from "lucide-react";
 
 export function MobileStickyNav() {
+  const [visible, setVisible] = useState(false);
+  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setVisible(true);
+      if (hideTimer.current) clearTimeout(hideTimer.current);
+      hideTimer.current = setTimeout(() => setVisible(false), 3000);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (hideTimer.current) clearTimeout(hideTimer.current);
+    };
+  }, []);
+
   return (
     <div
-      className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-1 border-t border-white/30"
+      className="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 py-1 border-t border-white/30 transition-all duration-300"
       style={{
         background: "rgba(255,255,255,0.75)",
         backdropFilter: "blur(16px)",
         WebkitBackdropFilter: "blur(16px)",
+        opacity: visible ? 1 : 0,
+        pointerEvents: visible ? "auto" : "none",
+        transform: visible ? "translateY(0)" : "translateY(100%)",
       }}
     >
       <a
