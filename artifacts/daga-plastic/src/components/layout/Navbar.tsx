@@ -6,6 +6,7 @@ import dagaLogo from "@assets/image_1778790689221.png";
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHeroVisible, setIsHeroVisible] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -14,10 +15,19 @@ export function Navbar() {
       setIsScrolled(y > 60);
       setIsHeroVisible(y < window.innerHeight * 0.75);
     };
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleResize, { passive: true });
     handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
+
+  // Mobile: show logo as soon as header turns white (isScrolled)
+  // Desktop: show logo once hero section is no longer visible
+  const logoVisible = isMobile ? isScrolled : !isHeroVisible;
 
   const navLinks = [
     { name: "Home", href: "#home" },
@@ -46,8 +56,8 @@ export function Navbar() {
           href="#home"
           className="flex items-center gap-2.5 group"
           style={{
-            opacity: isHeroVisible ? 0 : 1,
-            pointerEvents: isHeroVisible ? "none" : "auto",
+            opacity: logoVisible ? 1 : 0,
+            pointerEvents: logoVisible ? "auto" : "none",
             transition: "opacity 0.5s ease",
           }}
         >
