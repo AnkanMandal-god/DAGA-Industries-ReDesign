@@ -67,8 +67,8 @@ export function Hero() {
             </h1>
 
             {/* Company motto */}
-            <div className="text-white/50 italic text-xs md:text-sm border-l-2 border-primary/60 pl-3 mb-4 md:mb-6 max-w-lg leading-relaxed">
-              "Quality Manufacturing Is A System, Not Just A Slogan."
+            <div className="text-white/50 italic text-sm md:text-sm border-l-2 border-primary/60 pl-3 mb-4 md:mb-6 max-w-lg leading-relaxed">
+              "Quality Manufacturing Is A System, Not Just A Slogan. We Serve With Best Quality And Service. We Are Committed To Customer Satisfaction."
             </div>
 
             <p className="text-xs md:text-base lg:text-lg text-white/65 mb-5 md:mb-10 max-w-xl font-light leading-relaxed">
@@ -79,17 +79,17 @@ export function Hero() {
             <div className="flex flex-row gap-2 md:gap-3">
               <Button
                 onClick={handleDownloadCatalog}
-                className="bg-primary hover:bg-primary/85 text-white rounded-full px-4 md:px-8 py-2 md:py-6 text-xs md:text-base font-semibold transition-all duration-300 h-auto"
+                className="bg-primary hover:bg-primary/85 text-white rounded-full px-5 md:px-8 py-3 md:py-6 text-sm md:text-base font-semibold transition-all duration-300 h-auto"
                 data-testid="button-download-catalog"
               >
-                <FileDown className="mr-1.5 h-3.5 w-3.5 md:h-5 md:w-5 shrink-0" />
+                <FileDown className="mr-1.5 h-4 w-4 md:h-5 md:w-5 shrink-0" />
                 Download Catalog
               </Button>
 
               <Button
                 variant="outline"
                 asChild
-                className="border-white/25 text-white rounded-full px-4 md:px-8 py-2 md:py-6 text-xs md:text-base font-semibold group transition-all duration-300 hover:border-white/50 h-auto"
+                className="border-white/25 text-white rounded-full px-5 md:px-8 py-3 md:py-6 text-sm md:text-base font-semibold group transition-all duration-300 hover:border-white/50 h-auto"
                 style={{
                   background: "rgba(255,255,255,0.08)",
                   backdropFilter: "blur(12px)",
