@@ -55,7 +55,7 @@ export function Hero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="max-w-2xl"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-4 md:mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-4 md:mb-6">
               Engineering Precision
               <br />
               in{" "}
@@ -79,17 +79,17 @@ export function Hero() {
             <div className="flex flex-row gap-2 md:gap-3">
               <Button
                 onClick={handleDownloadCatalog}
-                className="bg-primary hover:bg-primary/85 text-white rounded-full px-5 md:px-8 py-3 md:py-6 text-sm md:text-base font-semibold transition-all duration-300 h-auto"
+                className="bg-primary hover:bg-primary/85 text-white rounded-full px-4 md:px-8 py-2.5 md:py-6 text-xs md:text-base font-semibold transition-all duration-300 h-auto"
                 data-testid="button-download-catalog"
               >
-                <FileDown className="mr-1.5 h-4 w-4 md:h-5 md:w-5 shrink-0" />
-                Download Catalog
+                <FileDown className="mr-1.5 h-3.5 w-3.5 md:h-5 md:w-5 shrink-0" />
+                <span>Catalog</span>
               </Button>
 
               <Button
                 variant="outline"
                 asChild
-                className="border-white/25 text-white rounded-full px-5 md:px-8 py-3 md:py-6 text-sm md:text-base font-semibold group transition-all duration-300 hover:border-white/50 h-auto"
+                className="border-white/25 text-white rounded-full px-4 md:px-8 py-2.5 md:py-6 text-xs md:text-base font-semibold group transition-all duration-300 hover:border-white/50 h-auto"
                 style={{
                   background: "rgba(255,255,255,0.08)",
                   backdropFilter: "blur(12px)",
@@ -98,7 +98,7 @@ export function Hero() {
                 data-testid="button-request-quote"
               >
                 <a href="#inquiry">
-                  Request Quote
+                  Get Quote
                   <ArrowRight className="ml-1.5 h-3.5 w-3.5 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform shrink-0" />
                 </a>
               </Button>
