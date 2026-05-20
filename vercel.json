@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/app.ts",
+      "use": "@vercel/node",
+      "config": {
+        "zeroConfig": true
+      }
+    }
+  ]
+}
+```
+*(This tells Vercel's build platform to use its built-in Node.js runtime builder, which handles TypeScript files automatically without running the strict global compiler that is crashing your build).*
+
+
+Open your Replit **Shell** and run the same three commands to push this new file to your repository:
