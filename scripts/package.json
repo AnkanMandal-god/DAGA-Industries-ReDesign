@@ -3,12 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "build": "tsc --noEmitOnError false --skipLibCheck || echo 'Bypassing compiler locks' && mkdir -p dist && cp -r src/* dist/ 2>/dev/null || true",
-    "start": "node dist/app.js"
-  },
-  "devDependencies": {
-    "@types/node": "catalog:",
-    "tsx": "catalog:"
+  {
+    "scripts": {
+      "build": "tsc --build",
+      "start": "node dist/app.js"
+    },
+    "dependencies": {
+      "express": "^4.19.2"
+    },
+    "devDependencies": {
+      "typescript": "^5.0.0",
+      "@types/node": "^20.0.0",
+      "@types/express": "^4.17.21"
+    }
   }
 }

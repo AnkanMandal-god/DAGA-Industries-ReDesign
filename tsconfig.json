@@ -1,13 +1,8 @@
 {
   "extends": "./tsconfig.base.json",
-  "compileOnSave": false,
   "compilerOptions": {
     "noImplicitAny": false,
-    "skipLibCheck": true,
-    "noEmitOnError": false
-  },
-  "ts-node": {
-    "transpileOnly": true
+    "skipLibCheck": true
   },
   "files": [],
   "references": [
