@@ -3,7 +3,11 @@
   "compileOnSave": false,
   "compilerOptions": {
     "noImplicitAny": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noEmitOnError": false
+  },
+  "ts-node": {
+    "transpileOnly": true
   },
   "files": [],
   "references": [
