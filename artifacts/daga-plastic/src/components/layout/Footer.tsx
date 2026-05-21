@@ -1,4 +1,4 @@
-import { Triangle } from "lucide-react";
+import dagaLogo from "@assets/image_1778790689221.png";
 
 export function Footer() {
   return (
@@ -6,8 +6,10 @@ export function Footer() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <Triangle className="w-8 h-8 text-primary fill-primary" />
+            <div className="flex items-center gap-2.5 mb-6">
+              <div className="w-10 h-10 rounded-full overflow-hidden bg-white ring-2 ring-primary/40 shrink-0">
+                <img src={dagaLogo} alt="Daga Logo" className="w-full h-full object-contain" />
+              </div>
               <span className="text-2xl font-black tracking-tight text-white">
                 DAGA
               </span>
