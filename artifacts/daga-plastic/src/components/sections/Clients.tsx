@@ -133,7 +133,7 @@ export function Clients() {
               {showAll ? (
                 <>Show Less <ChevronUp className="w-4 h-4" /></>
               ) : (
-                <>Show All {allClients.length} Clients <ChevronDown className="w-4 h-4" /></>
+                <>Show All <ChevronDown className="w-4 h-4" /></>
               )}
             </button>
           </div>
