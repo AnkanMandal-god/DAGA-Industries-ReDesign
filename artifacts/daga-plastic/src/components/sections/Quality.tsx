@@ -11,7 +11,6 @@ export function Quality() {
   return (
     <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent" />
-
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div
@@ -25,9 +24,7 @@ export function Quality() {
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Quality Assurance</h2>
             </div>
 
-            <p className="text-lg text-slate-300 leading-relaxed mb-12 border-l-2 border-primary pl-6">
-              Leveraging our long industry standing & in-depth product knowledge we manufacture superior quality plastic containers, plastic jerry cans, plastic drums that meet international quality standards.
-            </p>
+            <p className="text-lg text-slate-300 leading-relaxed mb-12 border-l-2 border-primary pl-6">Backed by a 55-year legacy of engineering precision, our automated manufacturing facilities deliver high-performance plastic containers, jerry cans, and industrial drums. Every batch undergoes rigorous quality assurance protocols to ensure absolute structural integrity, chemical resistance, and strict compliance with global B2B and international regulatory standards.</p>
 
             {/* Evenly spaced icon pillars */}
             <div className="grid grid-cols-3 gap-4">
