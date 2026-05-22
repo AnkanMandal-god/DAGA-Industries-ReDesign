@@ -4,6 +4,7 @@ import { FileDown, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import dagaLogo from "@assets/image_1778790689221.png";
 
+
 const stats = [
   { label: "Years Experience", value: "55+" },
   { label: "Products", value: "21+" },
@@ -23,15 +24,6 @@ export function Hero() {
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
-
-  const handleDownloadCatalog = () => {
-    const link = document.createElement("a");
-    link.href = "/product-catalog.pdf";
-    link.download = "Daga-Product-Catalog.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
 
   return (
     <section ref={sectionRef} id="home" className="relative min-h-[100dvh] flex flex-col">
@@ -115,12 +107,14 @@ export function Hero() {
               {/* CTAs */}
               <div className="flex flex-row gap-2 md:gap-3">
                 <Button
-                  onClick={handleDownloadCatalog}
+                  asChild
                   className="bg-primary hover:bg-primary/85 text-white rounded-full px-4 md:px-8 py-2.5 md:py-6 text-xs md:text-base font-semibold transition-all duration-300 h-auto"
                   data-testid="button-download-catalog"
                 >
-                  <FileDown className="mr-1.5 h-3.5 w-3.5 md:h-5 md:w-5 shrink-0" />
-                  <span>Catalog</span>
+                  <a href="/product-catalog.pdf" download="Daga-Product-Catalog.pdf">
+                    <FileDown className="mr-1.5 h-3.5 w-3.5 md:h-5 md:w-5 shrink-0" />
+                    <span>Catalog</span>
+                  </a>
                 </Button>
 
                 <Button
