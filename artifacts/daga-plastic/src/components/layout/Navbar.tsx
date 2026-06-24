@@ -62,7 +62,7 @@ export function Navbar() {
           }}
         >
           <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary/30 group-hover:ring-primary/70 transition-all duration-300 bg-white shadow-sm">
-            <img src={dagaLogo} alt="Daga Logo" className="w-full h-full object-contain" />
+            <img src={dagaLogo} alt="Raga Logo" className="w-full h-full object-contain" />
           </div>
           <span
             className="text-xl font-black tracking-tight"
@@ -71,7 +71,7 @@ export function Navbar() {
               transition: "color 0.5s ease",
             }}
           >
-            DAGA
+            RAGA
           </span>
         </a>
 

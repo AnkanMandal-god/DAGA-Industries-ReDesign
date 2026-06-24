@@ -111,7 +111,7 @@ export function Contact() {
         {/* RIGHT — Google Map (constrained height on lg) */}
         <div className="relative min-h-[340px] lg:min-h-0 border-l border-slate-800 order-1 lg:order-2">
           <iframe
-            title="Daga Plastic Industries Location"
+            title="Raga Plastic Industries Location"
             src="https://maps.google.com/maps?q=Poddar+Court+18+Rabindra+Sarani+Kolkata+West+Bengal+India&output=embed"
             width="100%"
             height="100%"

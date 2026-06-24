@@ -8,10 +8,10 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2.5 mb-6">
               <div className="w-10 h-10 rounded-full overflow-hidden bg-white ring-2 ring-primary/40 shrink-0">
-                <img src={dagaLogo} alt="Daga Logo" className="w-full h-full object-contain" />
+                <img src={dagaLogo} alt="Raga Logo" className="w-full h-full object-contain" />
               </div>
               <span className="text-2xl font-black tracking-tight text-white">
-                DAGA
+                RAGA
               </span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">
@@ -60,7 +60,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
-          <p>&copy; {new Date().getFullYear()} DAGA PLASTIC INDUSTRIES. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} RAGA PLASTIC INDUSTRIES. All rights reserved.</p>
           <p>Speculative redesign.</p>
         </div>
       </div>

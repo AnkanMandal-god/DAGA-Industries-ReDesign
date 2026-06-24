@@ -201,7 +201,7 @@ export const products: Product[] = [
     id: "custom-moulded-components",
     name: "Moulded Components (Custom)",
     category: "Moulded Components",
-    description: "Plastic moulded components manufactured as per customer specifications — from prototype to full production, using customer-supplied or Daga-developed tooling.",
+    description: "Plastic moulded components manufactured as per customer specifications — from prototype to full production, using customer-supplied or Raga-developed tooling.",
     features: ["Customer spec driven", "In-house tooling capability", "Rapid prototyping", "Full production runs"],
     sizes: ["As per specification"],
     materials: ["PP", "HDPE", "ABS", "Nylon", "POM"],

@@ -66,10 +66,10 @@ export function Hero() {
                   className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-xl"
                   style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}
                 >
-                  <img src={dagaLogo} alt="Daga Logo" className="w-full h-full object-contain p-1" />
+                  <img src={dagaLogo} alt="Raga Logo" className="w-full h-full object-contain p-1" />
                 </div>
                 <div>
-                  <span className="text-4xl font-black tracking-tight text-white leading-none block">DAGA</span>
+                  <span className="text-4xl font-black tracking-tight text-white leading-none block">RAGA</span>
                   <span className="text-xs text-white/50 uppercase tracking-widest">Plastic Industries</span>
                 </div>
               </motion.div>
@@ -111,7 +111,7 @@ export function Hero() {
                   className="bg-primary hover:bg-primary/85 text-white rounded-full px-4 md:px-8 py-2.5 md:py-6 text-xs md:text-base font-semibold transition-all duration-300 h-auto"
                   data-testid="button-download-catalog"
                 >
-                  <a href="/product-catalog.pdf" download="Daga-Product-Catalog.pdf">
+                  <a href="/product-catalog.pdf" download="Raga-Product-Catalog.pdf">
                     <FileDown className="mr-1.5 h-3.5 w-3.5 md:h-5 md:w-5 shrink-0" />
                     <span>Catalog</span>
                   </a>
@@ -150,10 +150,10 @@ export function Hero() {
                     className="w-36 h-36 lg:w-52 lg:h-52 rounded-full overflow-hidden ring-4 ring-primary/40 shadow-2xl"
                     style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(10px)" }}
                   >
-                    <img src={dagaLogo} alt="Daga Logo" className="w-full h-full object-contain p-2" />
+                    <img src={dagaLogo} alt="Raga Logo" className="w-full h-full object-contain p-2" />
                   </div>
                   <div className="text-center">
-                    <span className="text-4xl lg:text-5xl font-black tracking-tight text-white leading-none block">DAGA</span>
+                    <span className="text-4xl lg:text-5xl font-black tracking-tight text-white leading-none block">RAGA</span>
                     <span className="text-xs text-white/45 uppercase tracking-widest mt-1 block">Plastic Industries</span>
                   </div>
                 </motion.div>

@@ -62,7 +62,7 @@ export function About() {
               About Us
             </h2>
             <p className="text-sm md:text-base text-white/65 leading-relaxed mb-6 md:mb-8 font-light">
-              Since 1969, Daga Plastic Industries has combined technical expertise with automated manufacturing to deliver high-precision, ISO-certified packaging solutions for India's industrial leaders. We provide total, scalable solutions — from custom design to nationwide distribution — across the petrochemical, agrochemical, food-processing, and consumer segments. Headquartered in Kolkata, we have grown from a single facility into a high-turnover industrial powerhouse.
+              Since 1969, Raga Plastic Industries has combined technical expertise with automated manufacturing to deliver high-precision, ISO-certified packaging solutions for India's industrial leaders. We provide total, scalable solutions — from custom design to nationwide distribution — across the petrochemical, agrochemical, food-processing, and consumer segments. Headquartered in Kolkata, we have grown from a single facility into a high-turnover industrial powerhouse.
             </p>
 
             <Dialog>
@@ -93,13 +93,13 @@ export function About() {
               >
                 <DialogHeader className="mb-6 border-b border-white/20 pb-4">
                   <DialogTitle className="text-2xl md:text-3xl font-black tracking-tight text-white">
-                    The Daga Legacy: Engineering the Future of Plastics
+                    The Raga Legacy: Engineering the Future of Plastics
                   </DialogTitle>
                 </DialogHeader>
                 <div className="space-y-6 max-h-[60vh] overflow-y-auto pr-4">
                   <div>
                     <h4 className="text-base font-bold text-primary mb-2 uppercase tracking-wide">Our Heritage & Evolution</h4>
-                    <p className="text-white/75 leading-relaxed text-sm">Founded in 1969 in Kolkata, we have evolved over 55+ years into a high-turnover industrial powerhouse. We deliver precision-moulded solutions that define the "Daga Standard" of excellence in Indian manufacturing.</p>
+                    <p className="text-white/75 leading-relaxed text-sm">Founded in 1969 in Kolkata, we have evolved over 55+ years into a high-turnover industrial powerhouse. We deliver precision-moulded solutions that define the "Raga Standard" of excellence in Indian manufacturing.</p>
                   </div>
                   <div>
                     <h4 className="text-base font-bold text-primary mb-2 uppercase tracking-wide">Technical Precision</h4>
@@ -127,9 +127,9 @@ export function About() {
             className="hidden lg:flex flex-col items-center justify-start pt-12 lg:ml-[150px]"
           >
             <div className="w-48 h-48 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-[0_0_40px_rgba(211,47,47,0.15)] mb-4">
-              <img src={dagaLogo} alt="Daga Plastic Industries" className="w-full h-full object-contain bg-white p-2" />
+              <img src={dagaLogo} alt="Raga Plastic Industries" className="w-full h-full object-contain bg-white p-2" />
             </div>
-            <p className="text-white font-black tracking-widest text-center text-sm uppercase">Daga Plastic</p>
+            <p className="text-white font-black tracking-widest text-center text-sm uppercase">Raga Plastic</p>
             <p className="text-white/40 text-xs tracking-widest text-center uppercase mt-0.5">Industries</p>
             <div className="mt-3 px-3 py-1 rounded-full border border-primary/30 bg-primary/10">
               <span className="text-primary text-[10px] font-bold uppercase tracking-widest">Est. 1969</span>

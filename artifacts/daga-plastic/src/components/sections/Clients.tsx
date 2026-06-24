@@ -28,7 +28,7 @@ const allClients = [
 
 const testimonials = [
   {
-    quote: "Daga Plastic's 210L barrels have been integral to our lubricant packaging operations for over a decade. Consistent quality, zero failures.",
+    quote: "Raga Plastic's 210L barrels have been integral to our lubricant packaging operations for over a decade. Consistent quality, zero failures.",
     author: "Procurement Manager",
     company: "Indian Oil Corporation Ltd.",
     abbr: "IOC",
@@ -41,7 +41,7 @@ const testimonials = [
     logo: bergerLogo,
   },
   {
-    quote: "ISO-certified products, Pan-India reach, and a team that actually picks up the phone. Daga is our first call for industrial packaging.",
+    quote: "ISO-certified products, Pan-India reach, and a team that actually picks up the phone. Raga is our first call for industrial packaging.",
     author: "Operations Director",
     company: "Bharat Petroleum Corp Ltd.",
     abbr: "BPCL",
