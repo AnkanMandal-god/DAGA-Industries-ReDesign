@@ -48,7 +48,7 @@ export function MobileStickyNav() {
         <span className="text-[9px] font-semibold tracking-wide">WhatsApp</span>
       </a>
       <a
-        href="mailto:ajay@dagaplastic.in"
+        href="mailto:ajay@ragaplastic.in"
         className="flex flex-col items-center gap-0.5 px-3 py-1.5 rounded-lg text-slate-600 hover:text-primary transition-colors"
       >
         <Mail className="w-4 h-4" />

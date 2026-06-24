@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileDown, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import dagaLogo from "@assets/image_1778790689221.png";
+import ragaLogo from "@assets/image_1778790689221.png";
 
 
 const stats = [
@@ -52,7 +52,7 @@ export function Hero() {
       <div className="relative z-10 flex-1 flex items-center pt-20 md:pt-24 pb-6 md:pb-8">
         <div className="container mx-auto px-4 md:px-6 text-white">
 
-          {/* Mobile: logo + DAGA above title */}
+          {/* Mobile: logo + RAGA above title */}
           <AnimatePresence>
             {isVisible && (
               <motion.div
@@ -66,7 +66,7 @@ export function Hero() {
                   className="w-24 h-24 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-xl"
                   style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}
                 >
-                  <img src={dagaLogo} alt="Raga Logo" className="w-full h-full object-contain p-1" />
+                  <img src={ragaLogo} alt="Raga Logo" className="w-full h-full object-contain p-1" />
                 </div>
                 <div>
                   <span className="text-4xl font-black tracking-tight text-white leading-none block">RAGA</span>
@@ -150,7 +150,7 @@ export function Hero() {
                     className="w-36 h-36 lg:w-52 lg:h-52 rounded-full overflow-hidden ring-4 ring-primary/40 shadow-2xl"
                     style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(10px)" }}
                   >
-                    <img src={dagaLogo} alt="Raga Logo" className="w-full h-full object-contain p-2" />
+                    <img src={ragaLogo} alt="Raga Logo" className="w-full h-full object-contain p-2" />
                   </div>
                   <div className="text-center">
                     <span className="text-4xl lg:text-5xl font-black tracking-tight text-white leading-none block">RAGA</span>

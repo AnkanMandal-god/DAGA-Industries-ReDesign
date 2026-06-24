@@ -56,8 +56,8 @@ export function Contact() {
                 <User className="w-4 h-4 text-primary shrink-0" />
                 Contact Person
               </p>
-              <p className="text-white/65 pl-6">Mr. Vijay Daga [Chairman]</p>
-              <p className="text-white/65 pl-6">Mr. Ajay Daga [Managing Director]</p>
+              <p className="text-white/65 pl-6">Mr. Vijay Raga [Chairman]</p>
+              <p className="text-white/65 pl-6">Mr. Ajay Raga [Managing Director]</p>
             </div>
 
             {/* Mobile */}
@@ -76,9 +76,9 @@ export function Contact() {
                 <Mail className="w-4 h-4 text-primary shrink-0" />
                 E-Mail
               </p>
-              <a href="mailto:ajay@dagaplastic.in" className="block text-white/65 pl-6 hover:text-primary transition-colors">ajay@dagaplastic.in</a>
-              <a href="mailto:Info@dagaplastic.in" className="block text-white/65 pl-6 hover:text-primary transition-colors">Info@dagaplastic.in</a>
-              <a href="mailto:ajdaga00@gmail.com" className="block text-white/65 pl-6 hover:text-primary transition-colors">ajdaga00@gmail.com</a>
+              <a href="mailto:ajay@ragaplastic.in" className="block text-white/65 pl-6 hover:text-primary transition-colors">ajay@ragaplastic.in</a>
+              <a href="mailto:Info@ragaplastic.in" className="block text-white/65 pl-6 hover:text-primary transition-colors">Info@ragaplastic.in</a>
+              <a href="mailto:ajraga00@gmail.com" className="block text-white/65 pl-6 hover:text-primary transition-colors">ajraga00@gmail.com</a>
             </div>
 
             {/* Website */}
@@ -87,8 +87,8 @@ export function Contact() {
                 <Globe className="w-4 h-4 text-primary shrink-0" />
                 Website
               </p>
-              <a href="https://www.dagaplastic.in" target="_blank" rel="noreferrer" className="block text-white/65 pl-6 hover:text-primary transition-colors">
-                www.dagaplastic.in
+              <a href="https://www.ragaplastic.in" target="_blank" rel="noreferrer" className="block text-white/65 pl-6 hover:text-primary transition-colors">
+                www.ragaplastic.in
               </a>
             </div>
           </div>

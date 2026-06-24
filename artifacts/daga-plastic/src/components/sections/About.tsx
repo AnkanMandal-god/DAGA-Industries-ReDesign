@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Building2, Cpu, Settings2, TrendingUp, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import dagaLogo from "@assets/image_1778790689221.png";
+import ragaLogo from "@assets/image_1778790689221.png";
 import {
   Dialog,
   DialogContent,
@@ -127,7 +127,7 @@ export function About() {
             className="hidden lg:flex flex-col items-center justify-start pt-12 lg:ml-[150px]"
           >
             <div className="w-48 h-48 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-[0_0_40px_rgba(211,47,47,0.15)] mb-4">
-              <img src={dagaLogo} alt="Raga Plastic Industries" className="w-full h-full object-contain bg-white p-2" />
+              <img src={ragaLogo} alt="Raga Plastic Industries" className="w-full h-full object-contain bg-white p-2" />
             </div>
             <p className="text-white font-black tracking-widest text-center text-sm uppercase">Raga Plastic</p>
             <p className="text-white/40 text-xs tracking-widest text-center uppercase mt-0.5">Industries</p>

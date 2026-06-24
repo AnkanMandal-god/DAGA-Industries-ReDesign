@@ -1,7 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import dagaLogo from "@assets/image_1778790689221.png";
+import ragaLogo from "@assets/image_1778790689221.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,7 +62,7 @@ export function Navbar() {
           }}
         >
           <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-primary/30 group-hover:ring-primary/70 transition-all duration-300 bg-white shadow-sm">
-            <img src={dagaLogo} alt="Raga Logo" className="w-full h-full object-contain" />
+            <img src={ragaLogo} alt="Raga Logo" className="w-full h-full object-contain" />
           </div>
           <span
             className="text-xl font-black tracking-tight"

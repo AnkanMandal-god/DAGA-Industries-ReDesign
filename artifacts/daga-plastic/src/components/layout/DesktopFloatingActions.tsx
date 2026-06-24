@@ -26,7 +26,7 @@ export function DesktopFloatingActions() {
     >
       {/* Email */}
       <a
-        href="mailto:ajay@dagaplastic.in"
+        href="mailto:ajay@ragaplastic.in"
         data-testid="link-floating-email"
         title="Email Us"
         className="w-14 h-14 rounded-full bg-slate-700 hover:bg-slate-600 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"

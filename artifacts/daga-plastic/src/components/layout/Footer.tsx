@@ -1,4 +1,4 @@
-import dagaLogo from "@assets/image_1778790689221.png";
+import ragaLogo from "@assets/image_1778790689221.png";
 
 export function Footer() {
   return (
@@ -8,7 +8,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-2.5 mb-6">
               <div className="w-10 h-10 rounded-full overflow-hidden bg-white ring-2 ring-primary/40 shrink-0">
-                <img src={dagaLogo} alt="Raga Logo" className="w-full h-full object-contain" />
+                <img src={ragaLogo} alt="Raga Logo" className="w-full h-full object-contain" />
               </div>
               <span className="text-2xl font-black tracking-tight text-white">
                 RAGA
@@ -35,8 +35,8 @@ export function Footer() {
             <div className="space-y-4 text-sm">
               <div>
                 <p className="text-white font-bold uppercase tracking-wider text-xs mb-1">Contact Person</p>
-                <p className="text-slate-300">Mr. Vijay Daga (Chairman)</p>
-                <p className="text-slate-300">Mr. Ajay Daga (Managing Director)</p>
+                <p className="text-slate-300">Mr. Vijay Raga (Chairman)</p>
+                <p className="text-slate-300">Mr. Ajay Raga (Managing Director)</p>
               </div>
               <div>
                 <p className="text-white font-bold uppercase tracking-wider text-xs mb-1">Mobile</p>
@@ -44,12 +44,12 @@ export function Footer() {
               </div>
               <div>
                 <p className="text-white font-bold uppercase tracking-wider text-xs mb-1">E-Mail</p>
-                <p className="text-slate-300">ajay@dagaplastic.in / Info@dagaplastic.in /</p>
-                <p className="text-slate-300">ajdaga00@gmail.com</p>
+                <p className="text-slate-300">ajay@ragaplastic.in / Info@ragaplastic.in /</p>
+                <p className="text-slate-300">ajraga00@gmail.com</p>
               </div>
               <div>
                 <p className="text-white font-bold uppercase tracking-wider text-xs mb-1">Website</p>
-                <p className="text-slate-300">www.dagaplastic.in</p>
+                <p className="text-slate-300">www.ragaplastic.in</p>
               </div>
               <div>
                 <p className="text-white font-bold uppercase tracking-wider text-xs mb-1">Powered By:</p>
