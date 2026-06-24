@@ -1,7 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import ragaLogo from "@assets/image_1778790689221.png";
+import ragaLogo from "@assets/raga-logo-transparent.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);

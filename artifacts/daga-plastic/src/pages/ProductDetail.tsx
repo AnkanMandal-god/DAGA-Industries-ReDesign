@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { MobileStickyNav } from "@/components/layout/MobileStickyNav";
 import { DesktopFloatingActions } from "@/components/layout/DesktopFloatingActions";
 import { Button } from "@/components/ui/button";
-import { products } from "@/data/products";
+import { products, categoryImages, Category } from "@/data/products";
 import { useParams, Link, useLocation } from "wouter";
 import { ArrowLeft, CheckCircle2, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -29,7 +29,7 @@ export default function ProductDetail() {
     );
   }
 
-  const initials = product.name.substring(0, 2).toUpperCase();
+  const catImage = categoryImages[product.category as Category];
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
@@ -100,11 +100,13 @@ export default function ProductDetail() {
 
             {/* Right Column */}
             <div className="space-y-8">
-              <div className="aspect-[4/3] bg-slate-900 rounded-xl flex items-center justify-center overflow-hidden relative shadow-lg">
-                <span className="text-7xl md:text-9xl font-black text-white/10 tracking-tighter">
-                  {initials}
-                </span>
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10"></div>
+              <div className="aspect-[4/3] rounded-xl overflow-hidden relative shadow-lg">
+                <img
+                  src={catImage}
+                  alt={product.category}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-transparent" />
               </div>
 
               <div>

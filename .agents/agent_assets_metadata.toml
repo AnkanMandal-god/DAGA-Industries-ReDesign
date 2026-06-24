@@ -1,0 +1,43 @@
+uploads = []
+
+[[generated]]
+id = "iGcwV31ofbL0mfY273HT7"
+uri = "file://attached_assets/raga-logo-dark.png"
+type = "image"
+title = "raga dark logo"
+
+[[generated]]
+id = "JZicLPfjw4rSVh7be1NZk"
+uri = "file://attached_assets/cat-containers-drums.png"
+type = "image"
+title = "containers drums category"
+
+[[generated]]
+id = "2n_Tec_ZHLJJEAoXeJnp-"
+uri = "file://attached_assets/cat-bottles-packaging.png"
+type = "image"
+title = "bottles packaging category"
+
+[[generated]]
+id = "InsAbLFbULBG-JfIBvF5N"
+uri = "file://attached_assets/cat-caps-closures.png"
+type = "image"
+title = "caps closures category"
+
+[[generated]]
+id = "y-NJLWkSTqgfKd24pcAhN"
+uri = "file://attached_assets/cat-agricultural.png"
+type = "image"
+title = "agricultural plastic category"
+
+[[generated]]
+id = "0ECdSFoWntPxsOW5F6JB6"
+uri = "file://attached_assets/cat-moulded-components.png"
+type = "image"
+title = "moulded components category"
+
+[[outputs]]
+id = "zB4YqwmfMnIooHxEFWiha"
+uri = "file://attached_assets/stock_images/hero-bg-industrial.jpg"
+type = "image"
+title = "industrial plastic manufacturing factory interior dark dramatic lighting machinery production line"

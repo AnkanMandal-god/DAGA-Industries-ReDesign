@@ -1,9 +1,23 @@
+import containersImg from "@assets/cat-containers-drums.png";
+import bottlesImg from "@assets/cat-bottles-packaging.png";
+import capsImg from "@assets/cat-caps-closures.png";
+import agriculturalImg from "@assets/cat-agricultural.png";
+import mouldedImg from "@assets/cat-moulded-components.png";
+
 export type Category =
   | "Containers & Drums"
   | "Bottles & Packaging"
   | "Caps & Closures"
   | "Agricultural"
   | "Moulded Components";
+
+export const categoryImages: Record<Category, string> = {
+  "Containers & Drums": containersImg,
+  "Bottles & Packaging": bottlesImg,
+  "Caps & Closures": capsImg,
+  "Agricultural": agriculturalImg,
+  "Moulded Components": mouldedImg,
+};
 
 export interface Product {
   id: string;

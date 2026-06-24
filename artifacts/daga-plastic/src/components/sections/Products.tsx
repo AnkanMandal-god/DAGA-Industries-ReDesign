@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { LayoutGrid, List, ArrowRight, Package2, ChevronDown, ChevronUp } from "lucide-react";
-import { products, Category } from "@/data/products";
+import { products, Category, categoryImages } from "@/data/products";
 import { useLocation } from "wouter";
 
 const categories: (Category | "All")[] = [
@@ -139,9 +139,14 @@ export function Products() {
                       exit={{ opacity: 0, scale: 1.05 }}
                       transition={{ duration: 0.5 }}
                       onClick={() => setLocation(`/product/${product.id}`)}
-                      className={`aspect-square ${colorClass} cursor-pointer relative group overflow-hidden rounded-xl`}
+                      className={`aspect-square cursor-pointer relative group overflow-hidden rounded-xl`}
                     >
-                      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300" />
+                      <img
+                        src={categoryImages[product.category as Category]}
+                        alt={product.category}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/50 group-hover:bg-black/65 transition-colors duration-300" />
                       <div className="absolute inset-0 flex flex-col justify-end p-4 z-10">
                         <span className="text-[10px] font-bold uppercase tracking-widest text-white/55 mb-1">
                           {product.category}
@@ -221,12 +226,13 @@ export function Products() {
                         key={product.id}
                         className="bg-white/5 border border-white/10 rounded-xl overflow-hidden group hover:border-primary/50 hover:bg-white/8 transition-all duration-300"
                       >
-                        <div
-                          className={`aspect-[4/3] ${colorClass} flex items-center justify-center relative overflow-hidden`}
-                        >
-                          <span className="text-4xl font-black text-white/20 group-hover:scale-110 transition-transform duration-500 select-none">
-                            {product.name.substring(0, 2).toUpperCase()}
-                          </span>
+                        <div className="aspect-[4/3] relative overflow-hidden">
+                          <img
+                            src={categoryImages[product.category as Category]}
+                            alt={product.category}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300" />
                         </div>
                         <div className="p-4">
                           <span className="text-[10px] font-bold uppercase tracking-widest text-primary/75 block mb-1">

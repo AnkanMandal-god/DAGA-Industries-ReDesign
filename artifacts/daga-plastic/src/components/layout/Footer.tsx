@@ -1,4 +1,4 @@
-import ragaLogo from "@assets/image_1778790689221.png";
+import ragaLogo from "@assets/raga-logo-transparent.png";
 
 export function Footer() {
   return (

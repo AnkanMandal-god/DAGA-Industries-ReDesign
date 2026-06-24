@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { FileDown, ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import ragaLogo from "@assets/image_1778790689221.png";
+import ragaLogo from "@assets/raga-logo-transparent.png";
 
 
 const stats = [
